@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(8, 8, 8);
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .shade{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            background-color: aliceblue;
+            border-radius: 20px;
+        }
+        .shade::after{
+            content: " ";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: conic-gradient(from 0deg at 50% 50%, transparent,transparent,transparent,rgb(21, 205, 230) 290deg);
+            animation: anim 4s infinite linear;
+        }
+        .shade::before{
+            content: " ";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: conic-gradient(from 0deg at 50% 50%, transparent,transparent,transparent,rgb(230, 21, 167) 290deg);
+            animation: anim 4s infinite linear;
+            animation-delay: -2s;
+        }
+        @keyframes anim{
+            0%{
+                transform: rotateZ(0deg);
+            }
+            100%{
+                transform: rotateZ(360deg);
+            }
+        }
+        .box{
+            width: 390px;
+            height: 390px;
+            background-color: black;
+            z-index: 1;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="shade">
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

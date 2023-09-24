@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculater</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        /* .main{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } */
+    </style>
+</head>
+<body>
+    <div class="main" id="main">
+        <div>
+            <label for="txt1" id="lbl3">Enter the text 1=</label><input type="text" class="txt1" id="txt1"><br>
+            <label for="txt2">Enter the value 1=</label><input type="text" class="txt2" id="txt2"><br>    
+            <button type="button" onclick="add()"" class="btn1">Add</button>
+            <button type="button" onclick="sub()"" class="btn2">Sub</button>
+            <button type="button" onclick="mul()"" class="btn3">Mult</button>
+            <button type="button" onclick="div()"" class="btn4">Div</button><br>
+            <label id="lbl1"></label>
+        </div>
+    </div>
+    <div class="main1" id="main1">
+        <div>
+            <label for="txt3" id="lbl3">Enter the text 1=</label><input type="text" class="txt3" id="txt3"><br>
+            <label for="txt4">Enter the value 1=</label><input type="text" class="txt4" id="txt4"><br>    
+            <button type="button" onclick="max()"" class="btn5">Add</button>
+            <button type="button" onclick="min()"" class="btn6">Sub</button><br>
+            <label for="#"></label>            
+        </div>
+        
+    </div>
+</body>
+<script>
+
+    let add = () =>{
+        let a=parseInt(txt1.value)
+        let b=parseInt(txt2.value)
+        lbl1.innerHTML=a+b
+    }
+    let sub = () =>{
+        let a=parseInt(txt1.value)
+        let b=parseInt(txt2.value)
+        lbl1.innerHTML=a-b
+    } 
+    let mul = () =>{
+        let a=parseInt(txt1.value)
+        let b=parseInt(txt2.value)
+        lbl1.innerHTML=a*b
+    }
+    let div = () =>{
+        let a=parseInt(txt1.value)
+        let b=parseInt(txt2.value)
+        lbl1.innerHTML=a/b
+    }   
+    // let body = document.getElementsByTagName('body');
+    document.body.style.height = 1000+'vh';
+    // body.style.position= "reletive";
+    let main = document.getElementById('main')
+    main.style.position = "absolute";
+    main.style.display = "flex";
+    main.style.alignItems = "center";
+    main.style.justifyContent = "center";
+    main.style.width = 100+"%";
+    main.style.height = 50+"%";
+
+    let main1 = document.getElementById('main1')
+    main1.style.height = 50+"%";
+    main1.style.width = 100+"%";
+    main1.style.display = "flex"
+    main1.style.position = "absolute"
+    main1.style.alignItems = "center";
+    main1.style.justifyContent = "center";
+    main1.style.top =50+"%"
+
+    
+    
+
+
+    
+
+</script>
+</html>

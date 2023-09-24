@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Defination
+    //class in template for creating object
+    //class are in fect 'spacial function'
+
+    class product{
+        constructor(itemName,price,descount,productcode){
+            this.itemName = itemName;
+            this.price =price;
+            this.descount = descount;
+            this.productcode = productcode;
+        }
+    }
+    let pencil = new product('pencil',10,10+'%',234);
+    console.log(pencil);
+    
+    const product2 = class{//if we not give product name then the name itself will become product
+        constructor(itemName,price,discount,productCode){
+            this.itemName=itemName;
+            this.price=price;
+            this.discount=discount;
+            this.productCode=productCode;
+        }
+        //======================================get and set method in class=====================================
+        get getDiscountValue(){
+            return this.discount;
+        }//not need to apply () because it is not funtion
+        set setDiscountValue(value){
+            this.discount = value;
+        }
+        discountValue(){
+            return (this.discount*this.price)/100;
+        }//here we need to input () because its not a function
+    }
+
+    
+    let chair = new product2('chair',200,10,345);
+    console.log(chair);
+</script>
+</html>

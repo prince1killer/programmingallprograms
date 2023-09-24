@@ -1,0 +1,1 @@
+select name from employee1 where not exists (select cityname from city_info where cityname="surat")

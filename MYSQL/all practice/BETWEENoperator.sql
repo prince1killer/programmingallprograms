@@ -1,0 +1,1 @@
+SELECT * FROM practice1.bus_root_pesenger WHERE age BETWEEN 21 AND 30;

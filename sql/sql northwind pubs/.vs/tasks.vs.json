@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-NORTHWND",
+      "appliesTo": "App_Data/NORTHWND.MDF",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-pubs_log",
+      "appliesTo": "App_Data/pubs_log.ldf",
+      "type": "launch"
+    }
+  ]
+}

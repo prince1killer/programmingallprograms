@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <form action="" method="post">
+
+        <p>
+            Name:
+            <input type="text" id="txtname" required="required" pattern="[A-Za-z\s]{2,50}" title="Please Enter With Alfabatic Charater in 2 to 50" />
+        </p>
+
+        <p>
+            Email:
+            <input type="email" name="txtemail" value="" required="required" />
+        </p>
+
+
+        <p>
+            Password:
+            <input type="password" id="txtpass" required="required" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:" value="" />
+        </p>
+
+
+        <p>
+            Confirm Password:
+            <input type="password" onkeyup="validatePassword()" id="txtcpass" required="required" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:" value="" />
+        </p>
+
+
+
+        <p>
+            Age:
+            <input type="number" id="txtage" required="required" min="18" max="35" value="" />
+        </p>
+
+
+
+        <p>
+            City:
+            <select required="required">
+                <option value="">--Select City--</option>
+                
+                <option value="Himatnagar">Himatnagar</option>
+                <option value="Surat">Surat</option>
+                <option value="Baroda">Baroda</option>
+
+
+            </select>
+
+        </p>
+
+
+        <p>
+            PinCode:
+            <input type="text" id="txtpin" required="required" pattern="\d{6}" title="Only Numeric value and 6 dig" />
+        </p>
+
+
+
+
+        <p>
+
+            <input type="submit" value="Sign Up" />
+        </p>
+
+
+
+
+
+    </form>
+
+
+    <script type="text/javascript">
+
+        function validatePassword() {
+
+
+            if (txtpass.value == txtcpass.value) {
+
+                txtcpass.setCustomValidity('');
+
+            }
+            else {
+                txtcpass.setCustomValidity('Password Does nOt Match');
+            }
+
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>

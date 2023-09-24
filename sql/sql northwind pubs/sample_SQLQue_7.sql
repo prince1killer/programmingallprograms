@@ -1,0 +1,1 @@
+select p.*,o.orderdate from products p join "order details" ord on p.productid = ord.productid

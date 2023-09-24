@@ -1,0 +1,1 @@
+SELECT * FROM practice1.bus_root_pesenger WHERE name LIKE"p%";

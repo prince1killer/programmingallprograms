@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+      }
+      .main {
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+      /* #heart {
+        width: 390px;
+        height: 350px;
+        /* stroke: yellow;
+        stroke-dasharray: 0; 
+      } */
+      .inner-heart{
+        
+        fill: rgb(172, 179, 172);
+        stroke-width: 10px;
+        stroke: rgb(236, 19, 139);
+        stroke-dasharray: 330%;
+        stroke-dashoffset: 330%;
+      }
+      #heart.like{
+        animation: 4s ease-in forwards like,
+        .8s linear 2s 2 forwards beat ;
+      }
+      #heart.unlike{
+        animation: 4s ease-in forwards like;
+      }
+      @keyframes like{
+        0%{
+          fill: rgb(172, 179, 172);
+          stroke-dashoffset: 330%;
+        }
+        70%{
+          fill: rgb(172, 179, 172);
+          stroke-dashoffset: 0%;
+        }
+        100%{
+          fill: rgb(236, 19, 139);
+          stroke-dashoffset: 0%;
+        }
+      }
+      @keyframes beat{
+        0%{
+          transform: scale(1,1);
+        }
+        50%{
+          transform: scale(.9,.9);
+        }
+        100%{
+          transform: scale(1,1);
+        }
+      }
+      @keyframes unlike{
+        0%{
+          fill: rgb(236, 19, 139);
+          stroke-dashoffset: 0%;
+        }
+        70%{
+          fill: rgb(172, 179, 172);
+          stroke-dashoffset: 330%;
+        }
+        100%{
+          fill: rgb(172, 179, 172);
+          stroke-dashoffset: 330%;
+        }
+      }
+
+      /* .outer-heart{
+        fill: blue;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <svg id="heart" width="445" height="420" viewBox="0 0 445 420" fill="none">
+        <mask id="path-1-inside-1_18_5" fill="white">
+          <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M234.994 416.978L232.913 419.293L46.9638 252.192C-10.5465 200.511 -15.2721 111.994 36.4089 54.4836C83.2033 2.41111 160.197 -6.38674 217.029 30.7786C270.276 -11.7859 348.072 -10.1348 399.55 37.6332C456.227 90.2263 459.538 178.808 406.945 235.485L236.895 418.741L234.994 416.978Z"
+          />
+        </mask>
+        <path
+          class="inner-heart"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M234.994 416.978L232.913 419.293L46.9638 252.192C-10.5465 200.511 -15.2721 111.994 36.4089 54.4836C83.2033 2.41111 160.197 -6.38674 217.029 30.7786C270.276 -11.7859 348.072 -10.1348 399.55 37.6332C456.227 90.2263 459.538 178.808 406.945 235.485L236.895 418.741L234.994 416.978Z"
+          fill="#aa5a5a"
+          />
+          <path
+          class="outer-heart"
+          d="M234.994 416.978L245.197 405.982L234.025 395.615L223.837 406.952L234.994 416.978ZM232.913 419.293L222.887 430.45L234.044 440.476L244.07 429.319L232.913 419.293ZM46.9638 252.192L36.9377 263.349L36.9377 263.349L46.9638 252.192ZM36.4089 54.4836L25.252 44.4575L25.252 44.4575L36.4089 54.4836ZM217.029 30.7786L208.82 43.3326L217.911 49.2776L226.396 42.4951L217.029 30.7786ZM399.55 37.6332L389.347 48.6286L389.347 48.6286L399.55 37.6332ZM406.945 235.485L417.94 245.688L406.945 235.485ZM236.895 418.741L226.691 429.737L237.687 439.94L247.89 428.944L236.895 418.741ZM223.837 406.952L221.756 409.267L244.07 429.319L246.151 427.004L223.837 406.952ZM242.939 408.136L56.9899 241.035L36.9377 263.349L222.887 430.45L242.939 408.136ZM56.9899 241.035C5.64139 194.891 1.42214 115.858 47.5659 64.5096L25.252 44.4575C-31.9663 108.13 -26.7344 206.131 36.9377 263.349L56.9899 241.035ZM47.5659 64.5096C89.3373 18.0267 158.088 10.1564 208.82 43.3326L225.239 18.2246C162.306 -22.9299 77.0693 -13.2044 25.252 44.4575L47.5659 64.5096ZM226.396 42.4951C273.926 4.49959 343.394 5.9877 389.347 48.6286L409.753 26.6378C352.75 -26.2573 266.626 -28.0714 207.663 19.062L226.396 42.4951ZM389.347 48.6286C439.951 95.5867 442.908 174.677 395.95 225.282L417.94 245.688C476.168 182.938 472.503 84.8659 409.753 26.6378L389.347 48.6286ZM395.95 225.282L225.899 408.538L247.89 428.944L417.94 245.688L395.95 225.282ZM247.098 407.746L245.197 405.982L224.791 427.973L226.691 429.737L247.098 407.746Z"
+          fill="none"
+          mask="url(#path-1-inside-1_18_5)"
+        />
+      </svg>
+    </div>
+  </body>
+  <script>
+    window.addEventListener('DOMContentLoader',()=>{
+      const heart = document.getElementById('heart')
+
+      
+    })
+  </script>
+</html>

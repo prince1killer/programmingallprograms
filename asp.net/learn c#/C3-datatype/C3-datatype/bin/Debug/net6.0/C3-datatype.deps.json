@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "C3-datatype/1.0.0": {
+        "runtime": {
+          "C3-datatype.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "C3-datatype/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

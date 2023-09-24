@@ -1,0 +1,15 @@
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\C3-datatype.csproj.AssemblyReference.cache
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\C3-datatype.GeneratedMSBuildEditorConfig.editorconfig
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\C3-datatype.AssemblyInfoInputs.cache
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\C3-datatype.AssemblyInfo.cs
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\C3-datatype.csproj.CoreCompileInputs.cache
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\bin\Debug\net6.0\C3-datatype.exe
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\bin\Debug\net6.0\C3-datatype.deps.json
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\bin\Debug\net6.0\C3-datatype.runtimeconfig.json
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\bin\Debug\net6.0\C3-datatype.dll
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\bin\Debug\net6.0\C3-datatype.pdb
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\C3-datatype.dll
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\refint\C3-datatype.dll
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\C3-datatype.pdb
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\C3-datatype.genruntimeconfig.cache
+D:\learn programming\asp.net\learn c#\C3-datatype\C3-datatype\obj\Debug\net6.0\ref\C3-datatype.dll

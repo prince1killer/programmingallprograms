@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 100%;
+            min-height: 100vh;
+            /* background-color: green; */
+        }
+        #time{
+            position: absolute;
+            left: 45%;
+            width: 100%;
+            height: 100px;            
+        }
+        .watch{
+            position: relative;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        #lab1,#lab2,#lab3,.lab{
+            font-size: 50px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body id="bd">
+    <div class="main">
+        <!-- <label for="#" id="lab1">0</label>:<label for="#" id="lab2">0</label>:<label for="#" id="lab3"></label></label><br> -->
+        <div class="watch">
+            <div id="time">
+                <button id="btn1" type="button" value="click1" onclick="start()">Start</button>
+                <button id="btn2" type="button" value="click2" onclick="end()">End</button>
+                <button id="btn3" type="button" value="click3" onclick="reset()">Reset</button><br>
+            </div>
+        </div>
+        <input type="text" id="txt1"  placeholder="killer"><br>
+
+    </div>
+</body>
+<script>
+    let btn = document.querySelector("#btn");
+    let time = document.querySelector("#time");
+    let lab1 = document.createElement("label");
+    lab1.id="lab1";
+    lab1.innerHTML=0;
+    time.appendChild(lab1)
+    let lab = document.createElement("label");
+    lab.id="lab";
+    lab.className="lab"
+    lab.innerHTML=":";
+    time.appendChild(lab)
+    let lab2 = document.createElement("label");
+    lab2.id="lab2";
+    lab2.innerHTML=0;
+    time.appendChild(lab2)
+    lab = document.createElement("label");
+    lab.innerHTML=":";
+    lab.className="lab"
+    time.appendChild(lab)
+    let lab3 = document.createElement("label");
+    lab3.id="lab3";
+    lab3.innerHTML=0;
+    time.appendChild(lab3)
+    // console.log(typeof lab1)
+    const main = document.querySelector('.main')
+    let t =setInterval(()=>{
+        let col1 = Math.floor(Math.random()*255);
+            let col2 = Math.floor(Math.random()*255);
+            let col3 = Math.floor(Math.random()*255);
+            main.style.backgroundColor=`rgb(${col1},${col2},${col3})`
+        },1000)
+        let count1 = parseInt(lab1.innerHTML);
+        let count2 = parseInt(lab2.innerHTML)
+        let count3 = parseInt(lab3.innerHTML)
+        function start(){
+        setInterval(()=>{
+            count3++
+            lab3.innerHTML=count3
+            if(count3==60){
+                count3=0;
+                count2++;
+                lab2.innerHTML=count2;
+                if(count2==60){
+                    count2=0
+                    count1++;
+                    lab1.innerHTML=count1;
+                }
+            }
+
+        },1000)
+        // let end = () => {
+
+        // }
+    }
+    function end(){
+        clearInterval(lab1=0)
+        clearInterval(lab2=0)
+        clearInterval(lab3=0)
+    }
+    function reset(){
+        lab1.innerHTML=0;
+        lab2.innerHTML=0;
+        lab3.innerHTML=0;
+        // count1=0
+        // count2=0
+        // count3=0
+
+    }
+</script>
+</html>

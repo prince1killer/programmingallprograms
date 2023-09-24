@@ -1,0 +1,15 @@
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\bin\Debug\net6.0\C1-hello.exe
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\bin\Debug\net6.0\C1-hello.deps.json
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\bin\Debug\net6.0\C1-hello.runtimeconfig.json
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\bin\Debug\net6.0\C1-hello.dll
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\bin\Debug\net6.0\C1-hello.pdb
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\C1-hello.csproj.AssemblyReference.cache
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\C1-hello.GeneratedMSBuildEditorConfig.editorconfig
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\C1-hello.AssemblyInfoInputs.cache
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\C1-hello.AssemblyInfo.cs
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\C1-hello.csproj.CoreCompileInputs.cache
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\C1-hello.dll
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\refint\C1-hello.dll
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\C1-hello.pdb
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\C1-hello.genruntimeconfig.cache
+D:\learn programming\asp.net\learn c#\C1-hello\C1-hello\obj\Debug\net6.0\ref\C1-hello.dll

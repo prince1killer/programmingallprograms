@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h1 id="tit1" >To Do list</h1>
+</body>
+<script>
+    let lacture = 10;
+    let section = 3;
+    let title = "javascript";
+
+// ======================================================================
+//===This is type one 
+
+    console.log('=====================This is type one')
+    const course = {
+        lacture: 10,
+        section: 3,
+        title: "javascript",
+        notes: {
+            introduction: "Walcome to js course"
+        },
+        enroll(){//this is a function
+            console.log('you are successfull enrolled')
+        }
+    }
+
+    course.enroll();
+    console.log(course.title)//object are dynamic in nature
+    console.log(course)
+    course.price = 999;//hre we are making new value in object
+
+    //====This is type 2 called Factory Function
+    console.log('==========================This is type 2 called Factory Function')
+    function creatCourse(ac){
+        return {
+            color : "blue",
+            modal: "x",
+            company: "tesla",
+            price: 20000000,
+            Ac:ac,            
+        }
+    }
+
+    const car = creatCourse();
+    console.log(car.price)
+    console.log(car.Ac='yes')
+    console.log(car)
+
+    //====This is type 3 called constructor function
+    console.log('==============================This is type 3 called constructor function')
+
+    function CreatCourse(title){//in this we use paskel type conventational method
+        this.title = title,
+        this.enroll = function(){
+            console.log('You are successfully enroll');
+        }
+        // return this;//here this we can add in exchange of new key word
+    }
+    const cour = new CreatCourse('js');
+    console.log(cour.title='js')
+    cour.enroll();
+    cour.checkRoll = () =>{//make new function in consyructor function
+        console.log(99)
+    }
+    cour.class= 'nineth';
+    delete cour.enroll;//to delet from constructor function
+    console.log(cour);
+
+    // const cont1 = new Function('title',`{this.title = title,
+    //     this.enroll = function(){
+    //         console.log('You are successfully enroll');
+    //     }`)
+    
+    //========================Different between primitive data type================
+    console.log('=================Premative data type==================')
+    let number  =10;
+    let num2 = number;
+    number =15;
+    console.log(number)
+    console.log(num2)
+        //here number is passing from one variable to other variable
+    //======================Diffrence between reftence data type===================
+    console.log('=================refrance data type===================')
+        //here we are passing not number we are passing address from one variable to other variable
+    let obj= {number:20}
+    let obj2=obj;
+    obj.number=25;
+    console.log(obj)
+    console.log(obj2)
+
+    // 
+        
+</script>
+</html>

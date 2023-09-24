@@ -1,0 +1,1 @@
+select top(3) p.productid,p.productname,ord.orderid,ord.quantity from "order details" ord join products p on p.productid = ord.productid order by ord.quantity desc

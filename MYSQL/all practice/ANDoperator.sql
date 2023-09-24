@@ -1,0 +1,1 @@
+SELECT id,name,city,phone FROM practice1.bus_root_pesenger WHERE gender="F" AND age=21;

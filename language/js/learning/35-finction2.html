@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main{
+        background-color: red;
+        width: 600px;
+        height: 500px;
+        background-image: url("../img/off3.jpg");
+        background-size: cover;
+    }
+</style>
+<body>
+    <div id="main"></div>
+    rotate <input type="range" id="range1" onchange="fun1()" ><br>
+    scale <input type="range" id="range2"  onchange="fun2()">
+
+</body>
+<script>
+    let box = document.getElementById("main") 
+    function fun1(){
+        a = range1.value;
+        click1(a);       
+    }
+    function fun2(){
+        a = range2.value;
+        click1(a)       
+    }
+    function click1(a){
+        box.style.transform=`scale(${a}%) rotate(${a}deg)`
+    }
+</script>
+</html>

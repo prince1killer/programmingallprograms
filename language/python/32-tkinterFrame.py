@@ -1,0 +1,17 @@
+from tkinter import*
+root = Tk()
+root.geometry("500x400")
+f1 = Frame(root, bg="aqua", borderwidth=6)
+f1.pack(side=LEFT, fill=Y)
+f2 = Frame(root, bg="yellow", borderwidth=3)
+f2.pack(side=TOP, fill=X)
+f3 = Frame(root, bg="blue", borderwidth=3)
+f3.pack(side=TOP, fill=BOTH, expand=TRUE)
+
+l1 = Label(f1,text="project build in pycham",fg="blue")
+l1.pack()
+l1 = Label(f2, text="There is menu")
+l1.pack()
+l1 = Label(f3, text="This is content")
+l1.pack()
+root.mainloop()

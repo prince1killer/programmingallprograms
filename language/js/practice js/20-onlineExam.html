@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="q1">5 x 1 = </label> </br>
+    <input type="radio" name="q1" id="q11">1
+    <input type="radio" name="q1" id="q12">2
+    <input type="radio" name="q1" id="q13">5
+    <input type="radio" name="q1" id="q14">4
+<br><br>
+    <label for="q1">5 x 2 = </label><br>
+    <input type="radio" name="q2" id="q21">10
+    <input type="radio" name="q2" id="q22">20
+    <input type="radio" name="q2" id="q23">40
+    <input type="radio" name="q2" id="q24">50
+<br><br>
+    <label for="q1">5 x 3 = </label><br>
+    <input type="radio" name="q3" id="q31">10
+    <input type="radio" name="q3" id="q32">15
+    <input type="radio" name="q3" id="q33">20
+    <input type="radio" name="q3" id="q34">25
+<br><br>
+
+    <label for="q1">5 x 4 = </label><br>
+    <input type="radio" name="q4" id="q41">20
+    <input type="radio" name="q4" id="q42">30
+    <input type="radio" name="q4" id="q43">40
+    <input type="radio" name="q4" id="q44">50
+<br><br>
+
+    <label for="q1">5 x 5 = </label><br>
+    <input type="radio" name="q5" id="q51">25
+    <input type="radio" name="q5" id="q52">30
+    <input type="radio" name="q5" id="q53">35
+    <input type="radio" name="q5" id="q54">40
+<br><br>
+    <label for="q1">5 x 6 = </label><br>
+    <input type="radio" name="q6" id="q61">10
+    <input type="radio" name="q6" id="q62">20
+    <input type="radio" name="q6" id="q63">30
+    <input type="radio" name="q6" id="q64">40
+<br><br>
+    <label for="q1">5 x 7 = </label><br>
+    <input type="radio" name="q7" id="q71">25
+    <input type="radio" name="q7" id="q72">30
+    <input type="radio" name="q7" id="q73">35
+    <input type="radio" name="q7" id="q74">40
+<br><br>
+    <label for="q1">5 x 8 = </label><br>
+    <input type="radio" name="q8" id="q81">10
+    <input type="radio" name="q8" id="q82">20
+    <input type="radio" name="q8" id="q83">30
+    <input type="radio" name="q8" id="q84">40
+<br><br>
+
+    <button onclick="SubmitMarks()">Submit</button><br>
+
+    Correct Answer =<label  id="lbl1"></label><br>
+    Wrong Answer = <label  id="lbl2"></label><br>
+    Attand question = <label  id="lbl3"></label><br>
+    Non - Attend =<label  id="lbl4"></label><br>
+    Total result = <label id="lbl5"></label>
+
+</body>
+
+<script>
+
+    
+    let r=0,w=0,at=0,ut=0;
+    const firstCorrect = (a,b,c,d) => {
+        // let r=0,w=0,at=0,ut=0;
+    
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+        if(a.checked == true){
+            console.log(a)
+            return r++,at++ ;
+        }
+        else if(b.checked == true || c.checked == true || d.checked == true){
+            return w++, at++;
+        }
+        else if(a.checked == false && b.checked == false && c.checked == false && d.checked == false){
+           return ut++;
+
+        }
+    }
+
+
+    const SecondCorrect = (a,b,c,d) => {
+        // let r=0,w=0,at=0,ut=0;
+    
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+        if(b.checked == true){
+            console.log(a)
+            return r++,at++ ;
+        }
+        else if(a.checked == true || c.checked == true || d.checked == true){
+            return w++, at++;
+        }
+        else if(a.checked == false && b.checked == false && c.checked == false && d.checked == false){
+           return ut++;
+
+        }
+    }
+
+
+    const thirdCorrect = (a,b,c,d) => {
+        // let r=0,w=0,at=0,ut=0;
+    
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+        if(c.checked == true){
+            console.log(a)
+            return r++,at++ ;
+        }
+        else if(b.checked == true || a.checked == true || d.checked == true){
+            return w++, at++;
+        }
+        else if(a.checked == false && b.checked == false && c.checked == false && d.checked == false){
+           return ut++;
+
+        }
+    }
+
+
+    const fourthCorrect = (a,b,c,d) => {
+        // let r=0,w=0,at=0,ut=0;
+    
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+        if(d.checked == true){
+            console.log(d)
+            return r++,at++ ;
+        }
+        else if(b.checked == true || c.checked == true || a.checked == true){
+            return w++, at++;
+        }
+        else if(a.checked == false && b.checked == false && c.checked == false && d.checked == false){
+           return ut++;
+
+        }
+    }
+
+    const SubmitMarks = () => {
+            
+        thirdCorrect(q11,q12,q13,q14)//1
+        firstCorrect(q21,q22,q23,q24)//2
+        SecondCorrect(q31,q32,q33,q34)//3
+        firstCorrect(q41,q42,q43,q44)//4
+        firstCorrect(q51,q52,q53,q54)//5
+        thirdCorrect(q61,q62,q63,q64)//6
+        thirdCorrect(q71,q72,q73,q74)//7
+        fourthCorrect(q81,q82,q83,q84)//8
+        console.log(r)
+        
+        console.log(r)
+        lbl1.innerHTML= r;
+        lbl2.innerHTML= w;
+        lbl3.innerHTML= at;
+        lbl4.innerHTML= ut;
+        lbl5.innerHTML= r-w;
+    }
+
+</script>
+</html>

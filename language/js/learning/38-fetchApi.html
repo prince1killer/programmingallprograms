@@ -1,0 +1,27 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        // 1. https://api.github.com/users/omprince 2. https://api.github.com/users/prince1killer
+        // Type 1
+        fetch("https://api.github.com/users/prince1killer").then((response)=>{return response.json()}).then((data)=>{console.log(data.login)}).catch((err)=>{console.log(err)})
+        //Type 2
+        async function gitHubData(){
+            try {
+                const responceGit = await fetch("https://api.github.com/users/omprince")
+                const dataGit = responceGit.json() 
+                console.log(dataGit)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        gitHubData()    
+    </script>
+    </html>

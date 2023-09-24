@@ -1,0 +1,15 @@
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\2-sum.csproj.AssemblyReference.cache
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\2-sum.GeneratedMSBuildEditorConfig.editorconfig
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\2-sum.AssemblyInfoInputs.cache
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\2-sum.AssemblyInfo.cs
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\2-sum.csproj.CoreCompileInputs.cache
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\bin\Debug\net6.0\2-sum.exe
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\bin\Debug\net6.0\2-sum.deps.json
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\bin\Debug\net6.0\2-sum.runtimeconfig.json
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\bin\Debug\net6.0\2-sum.dll
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\bin\Debug\net6.0\2-sum.pdb
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\2-sum.dll
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\refint\2-sum.dll
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\2-sum.pdb
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\2-sum.genruntimeconfig.cache
+D:\learn programming\asp.net\learn c#\2-sum\2-sum\obj\Debug\net6.0\ref\2-sum.dll

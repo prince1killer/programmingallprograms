@@ -1,0 +1,1741 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0055)http://www.udel.edu/evelyn/SQL-Class1/SQLclass1All.html -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40" class="gr__udel_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  
+  <meta name="ProgId" content="Word.Document">
+  <meta name="Generator" content="Microsoft Word 10">
+  <meta name="Originator" content="Microsoft Word 10">
+  <link rel="File-List" href="http://www.udel.edu/evelyn/SQL-Class1/SQLclass1_files/filelist.xml">
+  <title>Introduction To Structured Query Language (SQL) – Part 1</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Evelyn V. Stevens</o:Author>
+  <o:LastAuthor>Evelyn V. Stevens</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>18</o:TotalTime>
+  <o:Created>2003-04-10T07:17:00Z</o:Created>
+  <o:LastSaved>2003-04-10T08:47:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>227</o:Words>
+  <o:Characters>1296</o:Characters>
+  <o:Company>University of Delaware</o:Company>
+  <o:Lines>10</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1520</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>125</w:Zoom>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+  <style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:22751615;
+	mso-list-type:hybrid;
+	mso-list-template-ids:4254596 1801118116 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:–;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l1
+	{mso-list-id:189535220;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-905133372 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:256136398;
+	mso-list-template-ids:-1837977734;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:310136858;
+	mso-list-template-ids:-1837977734;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l4
+	{mso-list-id:800146142;
+	mso-list-type:hybrid;
+	mso-list-template-ids:509648448 1397636026 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l4:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:–;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l5
+	{mso-list-id:955062336;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1908125504 1397636026 835504666 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l5:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:–;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l5:level2
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l6
+	{mso-list-id:1238319363;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1493782520 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:1657226005;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1837977734 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+  </style><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+<body style="" bgcolor="#ffffff" lang="EN-US" link="blue" vlink="purple" data-gr-c-s-loaded="true">
+<div class="Section1">
+<p class="MsoNormal" style="text-align: center;" align="center"><b style=""><span style="font-size: 11pt; font-family: Arial;">Introduction
+<span class="GramE">To</span> Structured Query Language (SQL) – Part 1<o:p></o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></b></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">Topics<o:p></o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+  <li class="MsoNormal" style=""><span style="font-size: 10pt; font-family: Arial;">Structured Query Language
+(SQL) - general concept<o:p></o:p></span></li>
+</ul>
+<p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+  <li class="MsoNormal" style=""><span style="font-size: 10pt; font-family: Arial;">SQL commands: <o:p></o:p></span></li>
+</ul>
+<p class="MsoNormal" style="margin-left: 0.25in;"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.75in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Data
+definition language (DDL)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.75in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Data
+manipulation language (DML)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.75in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Basic
+SELECT queries<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.75in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Queries
+using DDL and DML commands<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></b></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">References:<o:p></o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+  <li class="MsoNormal" style=""><span style="font-size: 10pt; font-family: Arial;">Online tutorials: <o:p></o:p></span></li>
+</ul>
+<p class="MsoNormal" style="margin-left: 0.25in;"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">– A Gentle Introduction
+to SQL: <a href="http://sqlzoo.net/">http://sqlzoo.net</a>
+<span style="">&nbsp; </span>(Interactive tutorials,
+across-database comparisons)<br>
+<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><br>
+– SQL Tutorial: <a href="http://www.w3schools.com/sql/default.asp">http://www.w3schools.com/sql/default.asp</a>&nbsp;
+<span style=""></span>(No
+exercises but includes a quiz; quite a few ads and animated text.)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><br>
+– Interactive Online SQL Training: <a href="http://www.sqlcourse.com/">http://www.sqlcourse.com</a>
+<span style="">&nbsp; </span>(Interactive
+tutorials,
+Includes standalone SQL interpreter for trying out statements; some
+pictures,
+ads, scrolling text.)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+  <li class="MsoNormal" style=""><span style="font-size: 10pt; font-family: Arial;">General, online:<o:p></o:p></span></li>
+</ul>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">– Learning Guide: SQL: <a href="http://searchoracle.techtarget.com/general/0,295582,sid41_gci1075959,00.html">
+http://searchdatabase.techtarget.com/orginalContent/0,289142,sid13_gci950920,00.html&nbsp;</a>
+<span style=""></span>(Seven
+chapters, basic to advanced;
+may have to register (free) to use - and receive e-mail newsletters :(
+)
+<o:p></o:p></span></p>
+<br>
+<ul style="margin-top: 0in;" type="disc">
+  <li class="MsoNormal" style=""><span style="font-size: 10pt; font-family: Arial;">General, books:<o:p></o:p></span></li>
+</ul>
+<p class="MsoNormal" style="margin-left: 0.25in;"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">– The Practical SQL
+Handbook, 4th Ed., Judith Bowman, Sandra
+Emerson, and Marcy Darnovsky; Addison Wesley <o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">– SQL in a Nutshell,
+Kevin Kline; O’Reilly <o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">– SQL for Smarties, 2nd
+Ed., Joe Celko; Morgan Kaufmann<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+  <li class="MsoNormal" style=""><span style="font-size: 10pt; font-family: Arial;">Database-specific:<o:p></o:p></span></li>
+</ul>
+<p class="MsoNormal" style="margin-left: 0.25in;"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.75in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Oracle:<span style="">&nbsp;
+</span><a href="http://otn.oracle.com/">http://otn.oracle.com</a>
+(May have to register (free) for some options)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<span style="font-size: 10pt;"><span style="">&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; –<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">MySQL, general:<span style="">&nbsp; <a href="http://dev.mysql.com/doc/mysql/en/index.html">http://dev.mysql.com/doc/mysql/en/index.html</a></span><span style=""><a href="http://dev.mysql.com/doc/"> </a><br>
+&nbsp;</span>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; SQL reference:&nbsp;<a href="http://dev.mysql.com/doc/mysql/en/sql-syntax.html">http://dev.mysql.com/doc/mysql/en/sql-syntax.html</a><span style=""> </span><o:p></o:p></span>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.75in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">SQL
+Server: <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/startsql/getstart_4fht.asp">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/startsql/getstart_4fht.asp</a><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">– <span style="">&nbsp;</span><span style="">&nbsp;&nbsp;</span>MS Access:<span style="">&nbsp;
+</span>Help / MS Access Help / Table of Contents / MS Jet SQL Reference<br>
+</span></p>
+<span style="font-family: &quot;times new roman&quot;;"><br>
+<br>
+<br>
+<br>
+</span>
+<div class="Section1">
+<div style="text-align: left;"></div>
+<p class="MsoNormal" style="font-weight: bold; text-align: left;"><span style="font-size: 11pt; font-family: Arial;">Relational
+databases<o:p></o:p></span></p>
+<p style="font-weight: bold;" class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="font-weight: bold;">Practical
+definition:</span><span style="">&nbsp; </span>Organized collection of
+data
+stored in logically related tables. <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Example</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.
+Open the
+Northwind training database in MS Access 2003
+(C:\TEMP\NorthwindTraining.mdb in 116 PHTC)&nbsp; by double-clicking on
+the file name or by opening MS Access from the Start menu and locating
+the database under File/Open.&nbsp; The database opens behind a "splash
+screen":<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+<img alt="splash screen" src="./Introduction To Structured Query Language (SQL) – Part 1_files/splash.jpg" style="width: 523px; height: 382px;" align="middle"><br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 10pt; font-family: Arial;">(NOTE:<span style="">&nbsp;
+</span>For practice on your own computer, make a
+copy of the Northwind database before starting; or start in a blank new
+database and import the Northwind tables <span class="GramE">you<span style="">&nbsp; </span>need</span>.)<br>
+</span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>Close the splash screen by clicking OK.&nbsp;
+The Main Switchboard form becomes visible in front of the database
+window:<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><img alt="switchboard" src="./Introduction To Structured Query Language (SQL) – Part 1_files/switchboard.jpg" style="width: 681px; height: 597px;" align="middle"><br>
+</span></p>
+<p class="MsoNormal"><br>
+<font size="-1"><span style="font-family: helvetica,arial,sans-serif;">3.&nbsp;
+Close the Main Switchboard by clicking on Display Database
+Window.&nbsp; Verify that "Tables" is selected in the Objects bar on
+the left. </span></font><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span><span class="GramE">Double-click on<span style=""> </span>the</span> Products table to see the data (open it
+in Datasheet view, in MS Access terminology).&nbsp; A partial view:<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+<img alt="products table" src="./Introduction To Structured Query Language (SQL) – Part 1_files/products.jpg" style="width: 762px; height: 325px;" align="middle">&nbsp;<br>
+</span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">5.<span style="">&nbsp; </span>Change to table Design view by clicking on the
+View button (circled above) and find
+the primary key.&nbsp; To check for other indexed columns, select
+Indexes from the View menu:<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+<img alt="products table design" src="./Introduction To Structured Query Language (SQL) – Part 1_files/products_design.jpg" style="width: 589px; height: 705px;" align="middle"><br>
+</span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">6.<span style="">&nbsp; </span>Close the table<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="font-weight: bold;">Referential
+integrity constraints:</span><span style="">&nbsp; </span>Primary /
+foreign
+key relationships or rules defined using SQL or vendor extensions that
+prevent loss or unwanted modification of data and maintain data
+consistency throughout all tables in the database.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Example</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Relationships diagram in the Northwind database<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Click the Relationships button (circled below)
+or choose Tools
+/ Relationships:</span></p>
+<p class="MsoNormal"><br>
+<img alt="relationships button" src="./Introduction To Structured Query Language (SQL) – Part 1_files/rel-button.jpg" style="width: 610px; height: 76px;" align="middle"><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">The
+relationships window opens:</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><img alt="relationshiops window" src="./Introduction To Structured Query Language (SQL) – Part 1_files/rel-window.jpg" style="width: 635px; height: 456px;" align="middle"><br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+2.<span style="">&nbsp; </span>Find the Products table and its related
+table
+or tables.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+3.<span style="">&nbsp; </span>Note the primary key (ProductID) and
+two foreign
+keys (SupplierID and CategoryID) in
+the Products table.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;<br>
+</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p><br>
+</o:p></span></p>
+<div class="Section1">
+<div style="text-align: left;"></div>
+<p style="text-align: left;" class="MsoNormal"><b style=""><span style="font-size: 11pt; font-family: Arial;">Structured
+Query
+Language (SQL) Overview<o:p></o:p></span></b></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></b></p>
+<p class="MsoNormal"><span class="GramE"><span style="font-size: 10pt; font-family: Arial;">Non-procedural
+(declarative) language common to most relational database
+systems.</span></span><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Used
+by the database system to "manage" itself internally and by users to
+manipulate and query the
+data.<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Uses
+set theory (as opposed to row processing) to process requests.<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Has a limited
+but flexible set of commands.<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Free-<span class="GramE">form
+for the most part,</span> uses semi-colon as statement terminator in
+most
+databases.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Knowledge
+of SQL should enable<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">moving
+easily from one database system to another<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">writing
+queries that cannot be represented in the graphical user interface<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">troubleshooting<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">analyzing
+queries for performance (tuning)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">SQL
+commands
+classified by function:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Data
+definition language (DDL) - used to define or change database
+structure(s)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CREATE<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ALTER<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>DROP<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Data
+manipulation language (DML) - used to select or change data<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>INSERT<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>UPDATE<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>DELETE<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SELECT<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Data
+control language (DCL) - used to control user access (e.g., GRANT,
+REVOKE)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Transactional language -
+used to control logical units of work
+(e.g., COMMIT)<o:p></o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<p class="MsoNormal"><br>
+</p>
+<p class="MsoNormal">
+</p>
+<div class="Section1">
+<div style="text-align: left;">
+</div>
+<p style="text-align: left;" class="MsoNormal"><span style="font-family: helvetica,arial,sans-serif;" class="GramE"><b style="font-family: arial;"><span style="font-size: 10pt;">Data
+retrieval -
+Introduction to the
+SELECT statement</span></b><span style="font-size: 10pt;"></span></span><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="font-weight: bold;">SELECT</span> is one of the
+Data Manipulation Language (DML) commands, used for retrieving specific
+data from one or more tables,
+reporting calculated results based on the data retrieved, or displaying
+the
+results of “what if?” type calculations.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Example:<o:p></o:p></span></i></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Click Queries on the Objects pane and run the
+query Current Product List (double-click or click on Open):<br>
+</span></p>
+<p class="MsoNormal"><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <img alt="current product list query result" src="./Introduction To Structured Query Language (SQL) – Part 1_files/currentprod-result.jpg" style="width: 356px; height: 325px;" align="middle"><br>
+<br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.
+<span style="">&nbsp;</span>Change to SQL view to see the SELECT
+statement:<br>
+</span></p>
+<p class="MsoNormal"><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <img alt="current product query sql" src="./Introduction To Structured Query Language (SQL) – Part 1_files/currentprod-sql.jpg" style="width: 508px; height: 163px;" align="middle"></p>
+<p class="MsoNormal"><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <small><span style="font-family: helvetica,arial,sans-serif;">Notice the following
+in the statement above:</span><br style="font-family: helvetica,arial,sans-serif;">
+</small></p>
+<p style="font-family: helvetica,arial,sans-serif;" class="MsoNormal"><small>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp; The table name has been <span style="font-weight: bold;">aliased</span> (Product List).<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; Columns are named as <span style="font-weight: bold;">alias_name.column_name</span> (strictly
+speaking, not necessary for a single-table query).</small></p>
+<p class="MsoNormal"><small><span style="font-family: helvetica,arial,sans-serif;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp; Access uses square brackets when names contain
+punctuation such as spaces; other databases use quotes. &nbsp;&nbsp; </span><br style="font-family: helvetica,arial,sans-serif;">
+<span style="font-family: helvetica,arial,sans-serif;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp; Access inserts many more parentheses than actually
+needed.</span></small><br>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Close the query.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise: </span></i></b><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;</span>Create
+a list of <span style="font-weight: bold;">all</span> product
+categories<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Type the following statement in the SQL
+window:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SELECT <span style="font-weight: bold;">*</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>FROM Categories<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>View the results without saving by clicking
+the
+View button (switches to Datasheet view).<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Change back to SQL view and run the statement
+by clicking the Run <span class="GramE">( !</span> ) button.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Save the query (e.g., as AllCategories) and
+close it.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise: </span></i></b><i style=""><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;</span></span></i><span style="font-size: 10pt; font-family: Arial;">Create a phone list of
+customer
+contacts (just company and contact names with phone and FAX numbers) <span style="font-weight: bold;">sorted</span> by
+company name.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Type the following statement in the SQL
+window:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SELECT CompanyName, ContactName,
+Phone, Fax<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>FROM Customers<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">ORDER BY</span> CompanyName<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>View the results; then run and save the query
+(e.g., as AllCustomers).<span style="">&nbsp; </span>You should see 91
+customers.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Modify the list to include only customers
+from the </span><st1:country-region><st1:place><span style="font-size: 10pt; font-family: Arial;">United Kingdom</span></st1:place></st1:country-region><span style="font-size: 10pt; font-family: Arial;"> and at the same time,
+use the aliases Company and Customer for the first two column headers:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">SELECT CompanyName AS
+Company, </span><st1:place><st1:city><span style="font-size: 10pt; font-family: Arial;">ContactName</span></st1:city><span style="font-size: 10pt; font-family: Arial;"> </span><st1:state><span style="font-size: 10pt; font-family: Arial;">AS</span></st1:state></st1:place><span style="font-size: 10pt; font-family: Arial;"> Customer, Phone, Fax<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">FROM Customers<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><span style="font-weight: bold;">WHERE</span> Country = “</span><st1:country-region><st1:place><span style="font-size: 10pt; font-family: Arial;">UK</span></st1:place></st1:country-region><span style="font-size: 10pt; font-family: Arial;">”<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">ORDER BY CompanyName<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>View the results; then run and save the query
+(e.g., as UKCustomers).&nbsp; There should be 7 customers<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">5.<span style="">&nbsp; </span>Close the query.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal">
+</p>
+<div class="Section1">
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">SELECT:<span style="">&nbsp;
+</span>Syntax for a single-table SELECT statement</span></i></b><span style="font-size: 10pt; font-family: Arial;"> <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">SELECT</span> column list<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">FROM</span> tablename<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">WHERE</span> criteria<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">ORDER BY</span> column list<br>
+</span></p>
+<p class="MsoNormal"><br>
+<small><span style="font-family: helvetica,arial,sans-serif;">Note:&nbsp;
+Although the language is free-form, the clauses that make up the
+statement must occur in the order shown.&nbsp; SELECT and FROM are
+required.&nbsp; The remaining clauses are optional.</span></small><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Operators
+and predicates for the <b style=""><i style="">WHERE</i></b> clause
+with examples:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Comparison operators:<span style="">&nbsp; </span>=<span style="">&nbsp;&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&gt;<span style="">&nbsp;
+</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;<span style="">&nbsp;&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;=<span style="">&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="">&nbsp;</span>&gt;=<span style="">&nbsp;&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp; </span>&lt;&gt;<span style="">&nbsp;&nbsp;
+</span>(<span class="GramE">or !</span>=)<span style=""> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>WHERE Country &lt;&gt; “</span><st1:country-region><st1:place><span style="font-size: 10pt; font-family: Arial;">UK</span></st1:place></st1:country-region><span style="font-size: 10pt; font-family: Arial;">”<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>BETWEEN ... AND ...</span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;"><span class="GramE"></span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>WHERE Price BETWEEN 10 AND 20<br>
+</span></p>
+<p class="MsoNormal">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <small><span style="font-family: helvetica,arial,sans-serif;">WHERE CompanyName
+BETWEEN A AND F</span></small><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>LIKE (with wildcard: <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>*<span style="">&nbsp;&nbsp;
+</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>?<span style="">&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="">&nbsp;</span><span class="GramE">in</span> Access;<span style="">&nbsp;&nbsp; </span>and<span style="">&nbsp;&nbsp;
+</span>%<span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="">&nbsp;
+</span>_<span style="">&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>in most other databases)<br>
+</span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>WHERE ContactTitle LIKE
+“Sales%”<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IN</span> (list)<br>
+</span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>WHERE State IN (“OR”,
+“WA”, “CA”)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>AND, NOT, OR with any of the above<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; WHERE Country = "USA" AND City =
+"New York"<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>IS
+NULL, IS NOT NULL<br>
+</span></p>
+<p class="MsoNormal"><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <small><span style="font-family: helvetica,arial,sans-serif;">WHERE PostalCode IS
+NOT NULL</span><br style="font-family: helvetica,arial,sans-serif;">
+<span style="font-family: helvetica,arial,sans-serif;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; WHERE Discount IS NULL</span><br style="font-family: helvetica,arial,sans-serif;">
+<span style="font-size: 10pt; font-family: helvetica,arial,sans-serif;"><o:p></o:p></span></small></p>
+<p style="font-family: helvetica,arial,sans-serif;" class="MsoNormal"><small><span style="font-size: 10pt;"><o:p>&nbsp;</o:p></span></small></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise: </span></i></b><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;</span>Create
+alphabetically sorted product lists
+showing product name (ProductName), supplier (SupplierID), and unit
+price
+(UnitPrice) for the following:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">All
+products<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(result:
+77 products)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Products
+that cost no more than $10<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(14)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Products
+in the $10 to<span style="">&nbsp; </span>$20 price range<span style="">&nbsp;&nbsp;&nbsp;
+</span>(29)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Chocolates<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(2
+or 3)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise:</span></i></b><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;
+</span>Modify the AllCustomers phone list to make separate lists for
+customers
+with and without an assigned region (two separate queries).<span style="">&nbsp; </span>Use <b style=""><i style="">is null</i></b>
+or <b style=""><i style="">is not null</i></b> to make the
+distinction.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p>
+</p>
+<div class="Section1">
+<p class="MsoNormal"><i style=""><span style="font-size: 9pt; font-family: Arial;">SQL for SELECT with
+criteria
+exercises:<o:p></o:p></span></i></p>
+<p class="MsoNormal"><i style=""><span style="font-size: 9pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">SELECT ProductName,
+SupplierID,
+UnitPrice<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">FROM Products<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">ORDER BY ProductName;<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">SELECT ProductName,
+SupplierID,
+UnitPrice<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">FROM Products<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">WHERE UnitPrice &lt;= 10<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">ORDER BY ProductName;<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">SELECT ProductName,
+SupplierID,
+UnitPrice<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">FROM Products<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">WHERE UnitPrice BETWEEN 10
+AND 20<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">ORDER BY ProductName;<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">SELECT ProductName,
+SupplierID,
+UnitPrice<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">FROM Products<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">WHERE ProductName LIKE
+"*Choc*"<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">OR ProductName LIKE
+"*Schok*"<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;">ORDER BY ProductName;<o:p></o:p></span></i></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><i style=""><span style="font-size: 9pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></p>
+<p class="MsoNormal"><small><o:p style="font-family: helvetica,arial,sans-serif;">T</o:p></small><span style="font-size: 10pt; font-family: Arial;">o find
+customers assigned to a region (should give 31 customers):<o:p></o:p></span>
+</p>
+<p class="MsoNormal" style="margin-left: 0.75in;"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; font-style: italic;"><span style="font-size: 10pt; font-family: Arial;">SELECT CompanyName,
+ContactName, Phone, Fax, Region<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; font-style: italic;"><span style="font-size: 10pt; font-family: Arial;">FROM Customers<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; font-style: italic;"><span style="font-size: 10pt; font-family: Arial;">WHERE Region is not null<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><span style="font-style: italic;">ORDER BY CompanyName;</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">To
+find
+customers not assigned to a region (60 customers):<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; font-style: italic;"><span style="font-size: 10pt; font-family: Arial;">SELECT CompanyName,
+ContactName, Phone, Fax<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; font-style: italic;"><span style="font-size: 10pt; font-family: Arial;">FROM Customers<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; font-style: italic;"><span style="font-size: 10pt; font-family: Arial;">WHERE Region is null<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><span style="font-style: italic;">ORDER BY CompanyName;</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>NOTE:<span style="">&nbsp; </span>No need to include region in
+the select list
+– we know there is no value for region in this query.</span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</div>
+<p class="MsoNormal"><br>
+</p>
+<p class="MsoNormal"><br>
+<br>
+</p>
+<div class="Section1">
+<div style="text-align: left;"></div>
+<p style="text-align: left;" class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">DATA DEFINITION LANGUAGE
+– DDL<o:p></o:p></span></b></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></b></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">CREATE <o:p></o:p></span></b></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;"><o:p><br>
+</o:p></span></b><span style="font-size: 10pt; font-family: Arial;"><o:p>The
+CREATE statement is used to create the main data storage objects:</o:p></span><b style=""><span style="font-size: 10pt; font-family: Arial;"><o:p><br>
+<br>
+</o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE">database</span> <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(not in all database systems, in particular, not in MS Access;
+can be
+complex when available)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE">table</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(varying degrees of complexity)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE">index</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Also available in other database
+systems:<span style="">&nbsp; </span><span class="GramE">CREATE<span style="">&nbsp; </span>trigger</span>, procedure, function, role,
+user)<span style="">&nbsp;&nbsp;&nbsp; <br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+</span></span>
+<p class="MsoNormal" style="text-align: left;"><b style=""><span style="font-size: 10pt; font-family: Arial;">Creating
+Tables</span></b><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Most
+database systems allow data
+selection from an existing table into a new table without writing a
+CREATE
+statement.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">This
+method is useful for
+the following:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Creating
+tables and quickly entering data at the same time<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Making
+backups or partial backups<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;">Creating
+archive tables<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Create a copy of the Suppliers table and call it MySuppliers.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Type the following SQL statement in the SQL
+design window:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">SELECT * INTO MySuppliers<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">FROM Suppliers;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>Click the View button (Datasheet View) to see
+the results without actually executing the statement.<span style="">&nbsp;
+</span>The query header should be "Query1:<span style="">&nbsp; </span>Make
+Table Query" and the results should
+show 29 rows.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Change to SQL view (not Design view) and
+execute the statement.<span style="">&nbsp;&nbsp; </span>Click <span class="GramE">Yes</span> when asked whether you want to continue (only
+Access
+gives this kind of warning!).<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Save the query as
+"DefineMySuppliers" and close it.<br>
+</span></p>
+<p class="MsoNormal"><br>
+<small><span style="font-family: helvetica,arial,sans-serif;">5.&nbsp;
+Verify that the query appears on the Query list (note that the icon for
+this DDL query is different from the icon for SELECT queries) and that
+the new table, MySuppliers, is on the Table list.</span></small><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">6.<span style="">&nbsp; </span>Compare the new table with the original in
+Datasheet and Design view.<span style="">&nbsp; </span>What, if any,
+differences do you find?<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Create an extract of the Categories table without pictures and
+call it
+CategoriesNoPix.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">(1<span class="GramE">.<span style="">&nbsp; </span>Optional</span> for this
+class:<span style="">&nbsp; </span>Open the Categories table in design
+view and
+note the column names.<span style="">&nbsp; </span>If you were
+creating such an extract in a work situation, you would need to know
+the column names or look them up using data dictionary or other databse
+tools.&nbsp; Close the table
+before running the SELECT ... INTO ... FROM query.)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>Type the following SQL statement in the SQL
+design window:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">SELECT CategoryID,
+CategoryName, Description INTO
+CategoriesNoPix<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">FROM Categories;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Switch to Datasheet View to see the results
+without executing the statement.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Switch to SQL <span class="GramE">view<span style="">&nbsp; </span>(</span>not Design view) and execute the
+statement.<span style="">&nbsp; </span>Click <span class="GramE">Yes</span>
+when asked about continuing.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">5.<span style="">&nbsp; </span>Save the statement as
+"DefineCategoriesNoPix" and close the SQL window.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">6.<span style="">&nbsp; </span>Compare the new table with the original.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<span style="font-family: arial;"><span style="font-style: italic;"><span style="font-weight: bold;"><br>
+<br>
+</span></span></span>
+<div class="Section1"><span style="font-size: 10pt; font-family: Arial;"><span style=""></span><o:p></o:p></span>
+<p style="text-align: left;" class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">CREATE TABLE<o:p></o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Used
+to
+create the tables where data will be stored.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">=========<o:p></o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Example:</span></i></b><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Open the Orders table in design view.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>Notice the data type specified for each column:</span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Autonumber<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(Other
+database systems:<span style="">&nbsp; </span><i style="">identity</i>,
+<span style="font-style: italic;">sequence</span>)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Text<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(<span class="GramE"><i style="">char(</i></span><i style="">n),
+varchar(n))</i><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Number&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; (In all database systems, various types depending on size
+or type of number to be stored)<span style=""> </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Date/Time<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Currency<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(<i style="">money</i>)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>Additional MS Access data
+types not
+used in this
+table:</span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Memo<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(<i style="">long (Oracle, up to 2 GB text</i>)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Yes/No<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(<span class="GramE"><i style="">boolean</i></span> -not
+available in some other database systems, e.g. Oracle)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>OLE Object<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(<i style="">blob, clob, raw</i>)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp; </span>Some additional data types in
+other
+database systems:</span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Timestamp<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Interval<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Enum<span style="">&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Set<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Select each column and notice its properties
+in the Field Properties grid, in particular:<br>
+<br>
+</span></p>
+<p style="font-family: helvetica,arial,sans-serif;" class="MsoNormal"><small>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Field (column) size<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+Caption (this is the column alias)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Required and
+Allow Zero Length properties<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Indexed
+property<br>
+<span style="font-size: 10pt;"><o:p></o:p></span></small></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>To view table structure and
+column
+properties in other databases: <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE">describe</span>
+tablename<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE">and</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>select [properties] from [system tables]<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Close the Orders table.<o:p></o:p></span></p>
+<span style="font-size: 10pt; font-family: Arial;"><o:p><br>
+The CREATE statement must specify the new table name, the column names,
+and the relevant data types and properties for each column.</o:p></span><br>
+<b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p><br>
+========<br>
+&nbsp;</o:p></span></i></b>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Create a table to store personnel data, with a StaffID column as
+primary
+key<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Type this SQL statement in the SQL query
+design window:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CREATE TABLE Personnel (<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>StaffID <span class="GramE">text(</span>9)
+CONSTRAINT StaffPK PRIMARY KEY,<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>LastName <span class="GramE">text(</span>15)
+not null,<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>FirstName <span class="GramE">text(</span>15)
+not null,<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Birthday date,<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Department <span class="GramE">text(</span>12)
+null);<span style="">&nbsp;&nbsp;&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>Execute the statement.<span style="">&nbsp; </span>If
+Access reports syntax errors, find and
+correct them.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Save the query as DefinePersonnel and close
+it.&nbsp; In the database window, check the Query list for this DDL
+query (notice that the icon for the query is different from the icon
+for SELECT queries) and check the Table list for the new Personnel
+table.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Run a query to select all records from the
+new table:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SELECT * FROM Personnel;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>The query returns one blank
+record (in
+other databases:<span style="">&nbsp; </span>0 rows):<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <img alt="select from personnel result" src="./Introduction To Structured Query Language (SQL) – Part 1_files/sel_empty_personnel.jpg" style="width: 533px; height: 87px;" align="middle"><br>
+</span></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style=""><br>
+&nbsp;
+</span>Close the query.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">5.<span style="">&nbsp; </span>Open the new table in datasheet view – it is
+empty and ready for data entry.<span style="">&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">6.<span style="">&nbsp; </span>Change to design view and compare with the
+SQL statement.&nbsp; Also, choose View / Indexes </span><span style="font-size: 10pt; font-family: Arial;">and compare with the
+constraint created on StaffID:</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style=""><br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img alt="personnel table in design view" src="./Introduction To Structured Query Language (SQL) – Part 1_files/personnel_design.jpg" style="width: 533px; height: 624px;" align="middle"></span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">7.<span style="">&nbsp; </span>Close the Personnel table. <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div class="Section1">
+<div style="text-align: left;"></div>
+<p style="text-align: left;" class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;
+</span><b style=""><i style="">CREATE
+TABLE Syntax</i></b>:<br>
+</span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span><span style="font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; &nbsp; –<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Selecting from an
+existing table<o:p></o:p></span></i></b>
+</p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SELECT column1, column2<span class="GramE">, ...</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>INTO newtable <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>FROM existingtable<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Defining from scratch<o:p></o:p></span></i></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CREATE TABLE tablename (<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE">column1name</span>
+datatype(size) [NOT NULL] [index1], <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE">column2name</span>
+datatype(size)[NOT NULL] [index2],<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>...<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>[,]CONSTRAINT multifieldindex <span class="GramE">[, ...]</span>])<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Single-field
+constraint:<span style="">&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CONSTRAINT
+constraintname {<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>PRIMARY KEY
+| <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>UNIQUE | <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>NOT NULL | <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>REFERENCES
+foreigntablename [(foreigncol1, foreigncol2<span class="GramE">), ...]</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>}<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Multifield
+constraint:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CONSTRAINT
+constraintname (<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>PRIMARY KEY (primary1, <span class="GramE">primary2 ,</span>
+...) |<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>UNIQUE (unique1, <span class="GramE">unique2 ,</span> ...) |<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>NOT NULL (notnull1, <span class="GramE">notnull2 ,</span> ...) |<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>FOREIGN KEY (ref1, <span class="GramE">ref2 ,</span> ...)
+REFERENCES foreigntable (foreigncol1,
+foreigncol2, ...)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>}<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</div>
+</div>
+</div>
+<p class="MsoNormal"></p>
+<div class="Section1">
+<div style="text-align: left;"></div>
+<p style="text-align: left;" class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">Data
+modification
+language statements (DML) INSERT, UPDATE, and DELETE<o:p></o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">DML - INSERT <o:p></o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Use
+the
+INSERT command to enter data into a table.<span style="">&nbsp;
+</span>You may insert one row at a time, or select several rows from an
+existing table and insert them all at once.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Add two rows to the Personnel table, one with all the data
+filled in, the other
+with required columns only (two separate queries).<span style="">&nbsp;
+</span></span><span style="font-size: 10pt; font-family: Arial;">Use
+these SQL statements or similar:<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><br>
+</span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">INSERT INTO Personnel <o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span class="GramE"><span style="font-size: 10pt; font-family: Arial;">VALUES(</span></span><span style="font-size: 10pt; font-family: Arial;">"7777777",
+"Smith", "John", #7/17/1950#, "Chemistry");<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">INSERT INTO Personnel
+(StaffID, LastName, FirstName) <o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">VALUES ("5555555",
+"Jones",
+"Jane");<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><i style="">NOTE:
+The date/time data type uses a # delimiter in Access; quotes in other
+databases.<span style=""><br>
+</span></i></span></p>
+<span style="font-size: 10pt; font-family: Arial;"><i style=""><span style=""></span></i></span><br>
+<span style="font-size: 10pt; font-family: Arial;"><span style="">When
+you execute the statements, Access will give you a
+warning (other database systems do not!):</span><br>
+<br>
+</span>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; <img alt="warning" src="./Introduction To Structured Query Language (SQL) – Part 1_files/append_warning.jpg" style="width: 457px; height: 127px;" align="middle"></span></p>
+<p class="MsoNormal"><br>
+<span style="font-size: 10pt; font-family: Arial;">Click Yes to
+complete the execution step.<br>
+<br>
+</span><span style="font-size: 10pt; font-family: Arial;"></span></p>
+<span style="font-size: 10pt; font-family: Arial;">Try to add a third
+row using one of the
+StaffIDs already in the table.<span style="">&nbsp; </span>What
+happens?<span style="">&nbsp; </span><o:p></o:p></span><br>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><i style=""><span style=""><br>
+</span></i><span style="">Verify the results by selecting all data from
+the Personnel table.&nbsp; For the statements above:<br>
+</span></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style=""><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <img alt="personnel data" src="./Introduction To Structured Query Language (SQL) – Part 1_files/personnel_data.jpg" style="width: 526px; height: 119px;" align="middle"><br>
+</span></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style=""><br>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;</span><i style=""><span style="">&nbsp;&nbsp; </span><o:p></o:p></i></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Add several employees from the Northwind database to the
+Personnel
+table.<span style="">&nbsp; </span>Here is an SQL statement that
+should add 5 staff members:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">INSERT INTO Personnel
+(StaffID, LastName, FirstName,
+Birthday)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">SELECT EmployeeID,
+LastName, FirstName, BirthDate<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">FROM Employees<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">WHERE Country = "</span><st1:country-region><st1:place><span style="font-size: 10pt; font-family: Arial;">USA</span></st1:place></st1:country-region><span style="font-size: 10pt; font-family: Arial;">";<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Syntax</span></i></b><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Single-row
+INSERT:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">INSERT INTO tablename
+(column list) <o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">VALUES (value list)<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Multi-row
+INSERT:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">INSERT INTO tablename
+(column list)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span class="GramE"><span style="font-size: 10pt; font-family: Arial;">SELECT<span style="">&nbsp;
+</span>column</span></span><span style="font-size: 10pt; font-family: Arial;"> list<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">FROM othertable<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">WHERE criteria<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Column
+and
+value lists are comma-separated lists in both cases<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p><br>
+</o:p></span></p>
+<div class="Section1">
+<div style="text-align: left;"></div>
+<p style="text-align: left;" class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">DDL -
+CREATE INDEX<o:p></o:p></span></b></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></b></p>
+<p class="MsoNormal"><span class="GramE"><span style="font-size: 10pt; font-family: Arial;">Used to create an index
+on an existing table.</span></span><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;
+</span>The <span style="font-weight: bold;">ALTER TABLE</span>
+statement can also be used to create (or drop) an index
+on a table.&nbsp; The syntax for this command varies across systems.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Uses
+(apart
+from speeding up searches in large tables and in multitable queries):<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;"><span style="font-weight: bold;">PRIMARY</span><span style="">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; </span>uniquely identifies
+the row
+(UNIQUE and NOT NULL by definition)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;"><span style="font-weight: bold;">UNIQUE</span><span style="">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </span>prevents
+entry of
+duplicate values<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">–<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-size: 10pt; font-family: Arial;"><span style="font-weight: bold;">DISALLOW
+NULLS</span><span style=""></span>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; prevents null values in the
+indexed field<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Create the missing primary key on the SupplierID column in table
+MySuppliers.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Type the following SQL statement in the SQL
+design window:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">CREATE INDEX MySuppPK<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">ON MySuppliers
+(SupplierID)<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">WITH PRIMARY;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>Execute the statement.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Save the query as DefineSupplierPK and close
+it.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Open the table MySuppliers in Design view to
+check
+the result.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Syntax</span></i></b><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CREATE <span class="GramE">[ UNIQUE</span>
+] INDEX indexname<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ON tablename (column1 [ASC|DESC],
+column2 [ASC|DESC<span class="GramE">], ...)</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>[WITH <span class="GramE">{ PRIMARY</span>
+| DISALLOW NULL | IGNORE NULL }]<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p><br>
+</o:p></span></p>
+<div class="Section1">
+<div style="text-align: left;"></div>
+<p style="text-align: left;" class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">DDL - ALTER TABLE<o:p></o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Used
+to add
+or remove columns or constraints.<span style="">&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Add a column to CategoriesNoPix for a short description and then
+remove
+it.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Type the following SQL statement in the SQL
+design window:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ALTER TABLE CategoriesNoPix<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ADD COLUMN ShortDesc <span class="GramE">Text(</span>25);<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>Execute the statement<span class="GramE">..</span><span style="">&nbsp; </span>Open the table in Datasheet or Design view to
+check the results; close the table.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Save as "AddColCategoriesNoPix".<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Without closing the SQL design window, change
+the statement to read<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ALTER TABLE CategoriesNoPix<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>DROP COLUMN ShortDesc;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">5.<span style="">&nbsp; </span>Execute the statement.<span style="">&nbsp; </span>Open
+the table to check the result.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">6.<span style="">&nbsp; </span>Save as "DropColCategoriesNoPix".<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<b style=""> </b><span style="">&nbsp;</span>Drop the referential
+integrity constraint on the Products table that does not allow a
+product to be
+added if it is not in an existing category; then add the constraint
+back again.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Open the Relationships window and note the
+relationship between Categories and Products.<span style="">&nbsp;
+</span>Close the Relationships window.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>Type the following statement in the SQL
+window:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">ALTER TABLE Products<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">DROP CONSTRAINT
+CategoriesProducts;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Execute the statement.<span style="">&nbsp; </span>Open
+the Relationships window and check the
+result.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Save the statement as
+“DropProductConstraint”.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">5.<span style="">&nbsp; </span>Modify the statement to add the constraint
+back again:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">ALTER TABLE Products<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">ADD CONSTRAINT
+CategoriesProducts<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">FOREIGN KEY (CategoryID)
+REFERENCES <span class="GramE">Categories(</span>CategoryID);<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">6.<span style="">&nbsp; </span>Execute the statement.<span style="">&nbsp; </span>Open
+the Relationships window and check the
+result.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">7.<span style="">&nbsp; </span>Save as “AddProductConstraint”.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Syntax</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ALTER TABLE tablename<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ADD COLUMN colname <span class="GramE">datatype(</span>size)
+[NOT NULL][CONSTRAINT indexname]<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE"><i style="">or</i></span><i style=""><o:p></o:p></i></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ADD CONSTRAINT multicolumnindex<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE"><i style="">or</i></span><i style=""><o:p></o:p></i></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>DROP COLUMN colname<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="GramE"><i style="">or</i></span><i style=""><o:p></o:p></i></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>DROP CONSTRAINT indexname<o:p></o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class="MsoNormal">
+</p>
+<div class="Section1">
+<div style="text-align: left;"></div>
+<p style="text-align: left;" class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">DDL - DROP<o:p></o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Use
+<span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-weight: bold;">DROP objectname</span> <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>to remove from the database any object that was <span style="font-weight: bold;">CREATEd</span>.<span style="">&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p class="MsoNormal"><span class="GramE"><span style="font-size: 10pt; font-family: Arial;">In MS Access, we can only
+DROP tables and indexes.</span></span><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Remove the CategoriesNoPix table from the database - we no
+longer need
+it.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">1.<span style="">&nbsp; </span>Type the following statement in the SQL
+window:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>DROP TABLE CategoriesNoPix;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">2.<span style="">&nbsp; </span>Execute the statement.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">3.<span style="">&nbsp; </span>Check the table list - the table should be
+gone.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">4.<span style="">&nbsp; </span>Save and close the DROP query (optional).<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Syntax</span></i></b><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>DROP {TABLE tablename | <o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>INDEX indexname ON
+tablename}<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;<br>
+<br>
+</o:p></p>
+<p class="MsoNormal">
+</p>
+<div class="Section1">
+<div style="text-align: left;"></div>
+<p style="text-align: left;" class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">DML –
+UPDATE<o:p></o:p></span></b></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></b></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Use
+the
+<span style="font-weight: bold;">UPDATE</span> statement to change data
+values in one or more columns, usually based on
+specific criteria.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Assign suppliers from </span><st1:city><st1:place><span style="font-size: 10pt; font-family: Arial;">London</span></st1:place></st1:city><span style="font-size: 10pt; font-family: Arial;"> and </span><st1:city><st1:place><span style="font-size: 10pt; font-family: Arial;">Manchester</span></st1:place></st1:city><span style="font-size: 10pt; font-family: Arial;"> in the MySuppliers table
+to the </span><st1:country-region><st1:place><span style="font-size: 10pt; font-family: Arial;">UK</span></st1:place></st1:country-region><span style="font-size: 10pt; font-family: Arial;"> region.<span style="">&nbsp;
+</span>Check the the relevant rows in the table (that is, run SELECT
+queries with the same criteria) before and after running this
+update query:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">UPDATE MySuppliers<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">SET Region = "</span><st1:country-region><st1:place><span style="font-size: 10pt; font-family: Arial;">UK</span></st1:place></st1:country-region><span style="font-size: 10pt; font-family: Arial;">"<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">WHERE City IN ("</span><st1:city><st1:place><span style="font-size: 10pt; font-family: Arial;">London</span></st1:place></st1:city><span style="font-size: 10pt; font-family: Arial;">", "</span><st1:city><st1:place><span style="font-size: 10pt; font-family: Arial;">Manchester</span></st1:place></st1:city><span style="font-size: 10pt; font-family: Arial;">");<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Where no region has been entered in the MySuppliers table,
+change the
+value to “Unassigned”.<span style="">&nbsp; </span>Check the table
+before and after running the query:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">UPDATE MySuppliers<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">SET Region = "Unassigned"<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">WHERE Region is null;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Syntax</span></i></b><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">UPDATE tablename<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">SET col1 = value1, col2 =
+value2<span class="GramE">, ...</span><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">WHERE criteria<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p>
+</p>
+<div class="Section1">
+<div style="text-align: left;">
+</div>
+<p style="text-align: left;" class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;">DML - DELETE<o:p></o:p></span></b></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></b></p>
+<p class="MsoNormal"><span class="GramE"><span style="font-size: 10pt; font-family: Arial;">Used to remove whole rows
+from a table.</span></span><span style="font-size: 10pt; font-family: Arial;"><span style="">&nbsp;
+</span>Use with caution!<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Check
+the
+Personnel table before and after running each of the following DELETE
+statements.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Delete the Chemistry staff member from the Personnel table:<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">DELETE
+*
+FROM Personnel<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">WHERE
+Department = "Chemistry";<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Exercise</span></i></b><span style="font-size: 10pt; font-family: Arial;">:<span style="">&nbsp;
+</span>Delete all staff members (no conditions):<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">DELETE
+*
+FROM Personnel;<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class="MsoNormal"><b style=""><i style=""><span style="font-size: 10pt; font-family: Arial;">Syntax</span></i></b><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">DELETE * FROM tablename<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Arial;">WHERE criteria<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">NOTE:<span style="">&nbsp; </span>MS Access requires the * to designate all
+columns; other databases use DELETE <span class="GramE">FROM ...<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span><o:p> <br>
+</o:p></p>
+</div>
+</div>
+</div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</div>
+
+
+</body></html>

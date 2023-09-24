@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call back</title>
+</head>
+<body>
+    Enter you name = <input type="text"  class="name"> <br/>
+    <button onclick="btn1()">Click</button> <br>
+    <label id="lb1"></label>  
+
+</body>
+<script>
+    // the callback function is a function pass into another function as an argument 
+    //which invock insid the outer functiion to complet an action 
+
+    //LIKE:- finction inside the function 
+    
+
+
+   let name = document.querySelector(".name");
+   let ans = document.getElementById("lb1");
+
+   function loadscript(src,callback1){
+    console.log("this is the function of callback");
+    callback1();
+    // window.location.href=src;
+    console.log(src)
+}
+
+function btn1(){
+    console.log(name.value)
+    ans.innerHTML = name.value;        
+}
+loadscript("https://www.getbootstrap.com",btn1)
+
+
+</script>
+</html>

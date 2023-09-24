@@ -1,0 +1,47 @@
+﻿.main {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around ;
+    align-items: center;
+    background: white;
+    margin-top: 10vh;
+    border: 1px #ddd solid;
+}
+.my-card {
+    height: 500px;
+    margin: auto;
+    width: 100%;
+    border-radius: 4px;
+    padding: 14px 18px;
+    border-radius: 4px;
+    /*border: 1px #ddd solid;*/
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.image__class{
+    
+    width:100%;
+    object-fit:contain;
+    height:450px;
+}
+.productdetail__section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.address__Section {
+    border-radius: 4px;
+    height: 500px !important;
+    padding: 14px 18px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #131921;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-direction: column;
+}

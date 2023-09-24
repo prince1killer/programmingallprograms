@@ -1,0 +1,88 @@
+:root{
+    --button-color: blue;
+    --button-text-color: white; 
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.navbar{
+    background-color: green;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+.nav-item{
+    margin: 0% 3%;
+}
+.logo{
+    padding: 1rem;
+    background-color: aqua;
+}
+.main-text{
+    height: 100vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    
+}
+#textArea{
+    width: 80%;
+    /* position: absolute; */
+    height: 80%;
+    box-shadow: 0 0 10px black;
+    border-top: 15px solid blue;
+    border-radius: 20px;
+    padding: 1rem;
+}
+.button-area{
+    position: absolute;
+    width: 80%;
+    bottom: 2%;
+}
+.h1h{
+    /* margin: 1% 0% -2% 0%; */
+    text-align: center;
+}
+.btn{
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border-radius: 10px;
+    margin: 0% 1%;
+}
+.spn1{
+    color: rgb(228, 79, 79);
+    font-weight: 700;
+}
+/* ===================================NAVbar========================= */
+.mode-title{
+    margin: 1%;
+}
+/* ================================Alert============================= */
+.alert{
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+}
+/* =================================about============================= */
+#about{
+    height: 100vh;
+}
+.about-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-img>img{
+    width: 300px;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+}
+.carousel-item>img{
+    height: 100vh;
+}

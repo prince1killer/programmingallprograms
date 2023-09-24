@@ -1,0 +1,1 @@
+﻿create index new_index on store_procedure(id,name);

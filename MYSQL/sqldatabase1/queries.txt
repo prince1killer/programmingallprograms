@@ -1,0 +1,52 @@
+Create a procedures
+
+1. To get list of all the orders processed with category name as an input parameter
+
+2. Get the product name , count of orders processed
+
+3. Get the list of the months which doesn’t have any orders  like  below ( This is a typical question , design the code before you execute carefully)
+
+Product
+
+No_orders_Year and month
+
+Chai
+
+03/2007
+
+Tofu
+
+04/2007
+
+Hint : Below Example is for the products which are doesn’t have any orders for certain years
+
+select distinct P_CROSS_Y.productid,P_CROSS_Y.productname,P_CROSS_Y.y,PY.ORDER_YEAR  from 
+(select top 1000 productid,productname,y from products cross join years order by 1,2) P_CROSS_Y
+left outer join (select distinct productid ,datepart(year,O.orderdate)  as ORDER_YEAR from [order details] od join orders o on od.orderid = o.orderid ) PY
+on P_CROSS_Y.productid = py.productid and P_CROSS_Y.y = py.ORDER_YEAR
+where py.ORDER_YEAR  is null
+
+Result :
+clip_image001
+
+4. Get the top 3 products which has more orders
+
+5. Get the list of the months which doesn’t have any orders for product chai
+
+6. Get the list of the products which doesn’t have any orders across all the months and year as
+
+7. Get the list of employees who processed the order “chai”
+
+8. Get the list of the employees and the count of orders they processed in the month of “march “across all the years
+
+9. Get the list of the employees who processed the orders belongs to his own city
+
+10. Get the list of the employees who processed the orders doesn’t belongs to his own city
+
+11. Get the shipper company who processed the order categories “Seafood”
+
+12. Get category name , count of orders processed by the USA employees
+
+Get the supplier name , shipper name for product category “sea food”
+Add one more column to the Employees Table as "Bonus"
+       and update the bonus field with number of total number orders each employee processed. Update         statement must contains Join

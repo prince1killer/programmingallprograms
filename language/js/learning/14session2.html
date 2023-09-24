@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>session storage</title>
+</head>
+<body>
+    <input type="text" id="s1"  >
+    <input type="text" id="s2">
+
+    <label id="a1"></label>
+    <label id="a2"></label>
+</body>
+<script>
+    s1.value = sessionStorage.getItem("t1");
+    s2.value = sessionStorage.getItem("t2");
+    a1.innerHTML = sessionStorage.getItem("t1");
+    a2.innerHTML = sessionStorage.getItem("t2");
+    console.log(t1)
+    // window.location.href("14session1.html")
+</script>
+</html>

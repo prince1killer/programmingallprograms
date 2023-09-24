@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+:root{
+  --hand1: Sacramento;
+  --hand2: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  
+}
+
+#nav{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#nav img{
+  width: 150px;
+}
+
+.menu-list{
+  display: flex;
+}
+
+.icon > button{
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  margin-left: 10px;
+}
+
+.menu-list ul{
+  display: flex;
+  list-style: none;
+}
+
+.menu-list ul li a{
+  text-decoration: none;
+  font-size: 25px;
+  padding: 0 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 520;
+}
+
+.serch{
+  width: 250px;
+  height: 100px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  
+}
+
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serch input{
+  position: absolute;
+ width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  font-size: 20px;
+}
+.serch > button {
+  right: 0;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(86, 210, 86);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none  ;
+}
+
+.shoping{
+  width: 100px;
+  height: 40px;
+  border: 2px solid #D4D4D4;
+  border-radius: 20px;
+  margin-left: 20px;
+  padding: 1px;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+.shoping > i{
+  width: 32px;
+  height: 32px;
+  background-color: green;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}   
+.shoping > label{
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--hand2);
+}
+
+.menubar{
+  display: none;
+  position: relative;
+  font-size: 20px;
+}
+.menubar ul{ 
+  position: absolute;
+  width: 200px;
+  transition: 1s;
+  right: 0;
+  list-style: none;
+  flex-direction: column;
+}
+.menubar ul li a{
+  text-decoration: none;
+}
+
+.menubar ul li{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  font-family: var(--hand2);
+  font-weight: 540;
+}
+
+.menubar button{
+  border: none;
+  background-color: transparent;
+}
+
+.menubar button i{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* ============================================= Responsive  ============================================== */
+@media (max-width:1200px) {
+  .menubar{ 
+    display: block;
+  }
+
+
+  .menu-list{
+    display: none;
+  }
+}
+
+
+
+/* ================================================= footer ==================================================== */

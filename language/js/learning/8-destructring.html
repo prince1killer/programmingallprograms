@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Destructing:- in this assignment is used to unpack value from an arrayor
+    //popular from objects into disting variables
+    
+    // example without destructring
+    let a1,b1,c1;
+    let arr1 = [2,3,4]
+    a1 = arr1[0]
+    b1 = arr1[1]
+    c1 = arr1[2]
+    console.log(a1,b1,c1);
+
+    // with destructing
+    
+    let arr2 = [4,5,645,3,45,67,78,89,56,];
+    // let [a2,b2,c2,...rest] = arr2;
+    // [a2, , ,...rest] = arr2;
+    // [a2, ,c2,...rest] = arr2;
+    [a2,b2, , , , , ,...rest] = arr2;
+    console.log(a2,b2,rest);
+
+    // Not only we use arry we can use objext also
+
+    let obj = {a:1,b:2,c:3}
+    let {a,b} = obj;
+    console.log(a,b)
+    
+</script>
+</html>

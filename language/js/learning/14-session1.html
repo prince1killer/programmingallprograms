@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open document</title>
+</head>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
+</style>
+<body>
+    <input type="text" id="t1" placeholder="Enter your name"><br/>
+    <input type="text" id="t2" placeholder="Enter your name"><br/>
+    <button type="button" class="ntm" onclick="click1()" >Submit</button> <br/>
+    <!-- <label for="">lisdjgfkjwhg</label> -->
+      <br/>
+    <br/>
+    <br/>
+</body>
+<script>
+    let a=23,b=45;
+    console.log(a+b);
+    // console.log(t1);
+    console.log(23+34)
+
+    function click1(){
+        console.log(34+34)
+        console.log(t1);
+        sessionStorage.setItem("t1",t1.value);
+        sessionStorage.setItem("t2",t2.value);
+        window.location.href='14session2.html'
+    }
+
+</script>
+</html>

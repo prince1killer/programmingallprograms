@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple events</title>
+</head>
+<body>
+
+    <!-- simple event -->
+    <button class="main">Click me</button>
+    <!-- focus event -->
+    <label for="#" >Enter some thing=</label><input type="text" id="txt1">
+    
+</div>
+</body>
+<script>
+    // simple evevnt
+    let btn = document.querySelector(".main")
+    function color(){
+    let min = 0,max = 255;
+    // console.log(min,max)
+    return Math.floor(Math.random()*(max-min)+min)
+}
+    btn.addEventListener('click',()=>{
+    console.log(color())
+    document.body.style.backgroundColor = `rgb(${color()},${color()},${color()})`
+    })
+    // focus event 
+    let txt1 = document.getElementById("txt1")
+    txt1.addEventListener('focus',()=>{
+        txt1.style.backgroundColor = "green"
+    })
+    txt1.addEventListener('blur',() => {
+        txt1.style.backgroundColor = " ";
+    })
+    //   focusin and focusout event
+    
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d letter animation</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .main{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg);
+            background-color: brown;
+        }
+        .box h1{
+            color: rgb(167, 153, 153);
+            font-size: 150px;
+            font-weight: 1000;
+            text-shadow: 1px 1px 1px white,
+                         6px 5px 1px white,
+                         6px 5px 1px white,
+                         6px 5px 1px white,
+                         6px 5px 1px white,
+                         6px 5px 1px white,
+                         6px 5px 1px white,
+                         6px 5px 1px white,
+                         6px 5px 1px white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <h1>o</h1>
+        </div>
+    </div>
+</body>
+</html>

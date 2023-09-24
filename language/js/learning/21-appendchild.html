@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append child</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+</body>
+<script>
+    //here we will learn this how to make appendChild 
+    //so we are learning how to make sub append childs
+    
+
+    const main = document.querySelector("#main");
+    // let box = document.getElementById("box1");
+    main.style.width = 100+"vw";
+    main.style.height = 100+"vh";
+    main.style.backgroundColor = "black";
+
+
+    let box1 = document.createElement("div");
+    let box2 = document.createElement("div");//here are the class we have to print box inside the main div
+    box2.id = "box2";
+    box2.className = "box2";
+    box2.style.width = 300+"px";
+    box2.style.height = 300+"px";
+    box2.style.backgroundColor = "aqua";
+    box1.appendChild(box2);
+
+
+    box1.id = "box1";
+    box1.className = "box1";
+    box1.style.width = 500+"px";
+    box1.style.height = 500+"px";
+    box1.style.backgroundColor = "white";
+    main.appendChild(box1);
+
+
+</script>
+</html>

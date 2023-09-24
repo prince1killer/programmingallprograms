@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "h26static2",
+            "request": "launch",
+            "mainClass": "h26static2",
+            "projectName": "learn programming_8c45afa4"
+        },
+        {
+            "type": "java",
+            "name": "try1",
+            "request": "launch",
+            "mainClass": "try1",
+            "projectName": "learn programming_8c45afa4"
+        },
+        {
+            "type": "java",
+            "name": "student",
+            "request": "launch",
+            "mainClass": "student",
+            "projectName": "learn programming_8c45afa4"
+        },
+        {
+            "type": "java",
+            "name": "Q34maxmim",
+            "request": "launch",
+            "mainClass": "Q34maxmim",
+            "projectName": "learn programming_8c45afa4"
+        },
+        {
+            "type": "java",
+            "name": "Q8salary",
+            "request": "launch",
+            "mainClass": "Q8salary",
+            "projectName": "learn programming_8c45afa4"
+        },
+        {
+            "type": "java",
+            "name": "Q23multipleamgstrong",
+            "request": "launch",
+            "mainClass": "Q23multipleamgstrong",
+            "projectName": "learn programming_8c45afa4"
+        }
+    ]
+}

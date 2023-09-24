@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border loader</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .main{
+            position: relative;
+            width: 100vw;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            box-shadow: 0 0 5px white,
+                        0 0 10px white;
+            border-radius: 5px;
+            /* background-image: conic-gradient(from 0deg at 50% 50%,  white,transparent, transparent,transparent,  rgb(241, 152, 167) 260deg);             */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .box::before{
+            content: " ";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: conic-gradient(from 0deg at 50% 50%,transparent,transparent,transparent,  rgb(161, 25, 245) 280deg);
+            animation: anim 4s linear infinite;
+            animation-delay: 2s;
+        }
+        .box::after{
+            content: " ";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: conic-gradient(from 0deg at 50% 50%, transparent ,green,  rgb(230, 102, 123) 280deg);
+            animation: anim 4s linear infinite;
+        }
+        @keyframes anim{
+            0%{
+                transform: rotateZ(0deg);
+            }
+            100%{
+                transform: rotateZ(360deg);
+            }
+        }
+        .img{
+            position: absolute;
+            width: 290px;
+            height: 290px;
+            background-image: url("img/img1.jpg");
+            z-index: 1;
+            background-size: cover;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <div class="img"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+SELECT * FROM practice1.bus_root_pesenger WHERE (age = 21 OR age =22) AND gender= "M" AND (city="idar" OR city="surst");

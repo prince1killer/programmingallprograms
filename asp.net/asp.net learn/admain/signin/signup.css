@@ -1,0 +1,182 @@
+﻿* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/*========================================== SIDE BAR ===============================================*/
+
+#side-bar {
+    float: left;
+    height: 100%;
+    width: 20%;
+    background-color: deepskyblue;
+}
+
+.side-bar-content {
+    width: 100%;
+    height: 100%;
+    background-color: var(--sidebar);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.s-content {
+    color: white;
+    width: 90%;
+    height: 60px;
+    border-top: 2px solid rgba(255,255,255,.5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+
+    .s-content > i {
+        margin: 0px 5px;
+    }
+
+    .s-content > label {
+        font-size: 10px;
+    }
+
+.pages {
+    border-bottom: 2px solid rgba(255,255,255,.5);
+}
+
+
+
+.logo {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10%;
+    background-color: var(--sidebar);
+    color: white;
+    font-size: 35px;
+    font-family: var(--font-logo);
+}
+
+.content {
+    width: 80%;
+    height: 100%;
+    float: right;
+    /*background-color: blue;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-title{
+    width: 300px;
+    height: 50px;
+    /*background-color: red;*/
+    display:flex;
+    align-items: center; 
+    justify-content: center;
+    font-size: 30px;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.box-content {
+    width: 300px;
+    height: 250px;
+    /*background-color: green;*/
+    padding: 2% 5%;
+}
+    .box-content > p {
+        margin: 5% 0%;
+    }
+        .box-content > p > #Button1 {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+        }
+            .box-content > p > #Button1:hover {
+                background-color: blue;
+                color: white;
+                transition: .5s;
+            }
+    .box-content > p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+/*=============================  nav  ================================*/
+nav {
+    width: 100%;
+    height: 60px;
+    background-color: var(--navcolor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 5%;
+    box-shadow: 5px 2px 15px black;
+}
+
+.search {
+    display: flex;
+}
+
+    .search input {
+        padding: 0% 5%;
+        border: none;
+        outline: none;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        background-color: var(--search);
+    }
+
+    .search > input:focus {
+        border: none;
+    }
+
+
+    .search div {
+        padding: 2%;
+        background-color: blue;
+        color: white;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+.share {
+    /*    background-color: black;*/
+    display: flex;
+    align-items: center;
+}
+
+    .share i {
+        color: var(--share);
+        padding: 0% 10px;
+    }
+
+.page {
+}
+
+.profile {
+    height: 100%;
+    width: contain;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    background-color: var(--share);
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.nav-right {
+    display: flex;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stop Watch</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .main{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(15, 15, 15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .time{
+            position: absolute;
+        }
+        .box{
+            position: relative;
+            width: 200px;
+            display: inline-block;
+            /* justify-content: center; */
+            /* align-items: center; */
+            height: 200px;
+            background-color: white;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .box::after{
+            content: " ";
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-image: conic-gradient(from 0deg at 50% 50% ,transparent,transparent,transparent,rgb(75, 197, 5));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: anim 4s infinite linear;
+            animation-delay: 2s;
+        }
+        .box::before{
+            content: " ";
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-image: conic-gradient(from 0deg at 50% 50% ,transparent,transparent,transparent,rgb(163, 0, 128));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: anim 4s infinite linear;
+
+        }
+        @keyframes anim{
+            0%{
+                transform: rotateZ(0deg);
+            }
+            100%{
+                transform: rotateZ(360deg);
+            }
+        }
+        .see{
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            background-color: black;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2% 0% 0% 2%;
+            border-radius: 50%;
+            font-size: 60px;
+            color: white;
+        }
+        .click{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 3%;
+        }
+        .second{
+            width: 150px;
+            height: 70px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="watch">
+            <div class="timer">
+                <span class="box">
+                    <div class="see"id="hour">00</div>
+                </span>
+                <span class="box">
+                    <div class="see"id="min">00</div>
+                </span>
+                <span class="box">
+                    <div class="see"id="sec">00</div>
+                </span>
+            </div>
+            <div class="click">
+                <button class="second" onclick="start()" id="hour">Start</button>
+                <button class="second" onclick="end()" id="min">End</button>
+                <button class="second" onclick="reset()" id="second">Reset</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let hour = document.querySelector("#hour").innerHTML;
+    let min = document.querySelector("#min").innerHTML;
+    let sec = document.querySelector("#sec").innerHTML;
+    sec = parseInt(sec);
+    hour = parseInt(hour);
+    min = parseInt(min); 
+    let start = () =>{
+        let count ;
+        let se = setInterval(()=>{
+            sec.innerHTML= count;
+            count++;
+            console.log(sec)
+        },10)
+    }
+</script>
+</html>

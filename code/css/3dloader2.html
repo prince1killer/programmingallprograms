@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circle cube loader</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .main{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(21, 20, 20);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            /* background-color: aqua; */
+            align-items: center;
+            transform-style: preserve-3d;
+            /* transform: rotateZ(180deg); */
+            animation: anim2 5s linear infinite;
+        }
+        .wall{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: chartreuse; */
+            background-image: url(img/img1.jpg);
+            background-size: cover;
+            /* border-radius: 50%; */
+        }
+        @keyframes anim2{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate3d(1,1,1,360deg);
+            }
+        }
+        .wall:nth-child(1){
+            transform: rotateZ(0deg);
+        }
+        .wall:nth-child(2){
+            transform: rotateZ(90deg) rotateX(90deg) translateZ(100px) translateY(100px);
+        }
+        .wall:nth-child(3){
+            transform: rotateZ(90deg) rotateY(90deg) translateZ(100px) translateX(-100px);
+        }
+        .wall:nth-child(4){
+            transform: rotateZ(90deg) translateZ(200px);
+        }
+        .wall:nth-child(5){
+            transform: rotateX(90deg)  translateZ(100px) translateY(100px);
+        }
+        .wall:nth-child(6){
+            transform: rotateY(-90deg) translateX(100px) translateZ(100px);
+        }
+        .loader{
+            position: relative;
+            transform-origin: left;
+            animation: anim 5s linear infinite;
+        }
+        @keyframes anim{
+            0%{
+                transform: rotateZ(0deg);
+            }
+            100%{
+                transform: rotateZ(360deg);
+            }
+        }
+        
+        .loader span{
+            width: 100px;
+            height: 2px;
+            position: absolute;
+            /* background-color: white; */
+            display: flex;
+            transform-origin: left;
+            align-items: center;
+            transform: rotate(calc(18deg * var(--x)));
+        }
+        .loader span::after{
+            content: " ";
+            right: 0%;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #f36bff;
+            box-shadow: 0 0 10px #f36bff,
+                        0 0 20px #f36bff,
+                        0 0 30px #f36bff,
+                        0 0 40px #f36bff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <div class="wall">
+                
+            </div>
+            <div class="wall">
+                
+            </div>
+            <div class="wall">
+                
+            </div>
+            <div class="wall">
+                
+            </div>
+            <div class="wall">
+                
+            </div>
+            <div class="wall">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
