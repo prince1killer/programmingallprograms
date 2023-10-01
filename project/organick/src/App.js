@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import "./App.css"
 import Home from "./components/home/Home";
 import Navebar from "./components/Navebar";
+import Footer from "./components/Footer";
 function App() {
 
   const [mode, setMode] = useState("light")
@@ -25,6 +26,7 @@ function App() {
     <div className="app" >
     <Navebar  black="black" mode={mode} modechange={modechange}/>
     <Home/>
+    <Footer/>
     </div>
   );
 }
