@@ -1,0 +1,148 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="StyleSheet.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="admin_panel">
+    
+
+        <%--left panel started--%>
+
+        <div class="leftpanel">
+
+            <%--logo started--%>
+
+            <div class="logo">
+       
+                <div class="icon">
+                         <i class="fa fa-shopping-cart"></i>
+                </div>
+
+                <div class="logo-detail">
+                    <h2>R MART</h2>
+                    <h4>ADMIN</h4>
+                </div>
+            </div>
+
+            <%--dashboard started--%>
+
+            <div class="dashboard">
+
+                <i class="fa fa-dashboard"></i><asp:Button Text="Dashboard" ID="dashboard_btn" runat="server" />
+
+            </div>
+
+            <%--interface started--%>
+
+            
+
+            <%--interface Finish--%>
+
+            
+            <%--left Menu Start--%>
+
+            <div class="left_menu">
+
+                <ul>
+                    <li><a href="a_addcategory.aspx">Add Category</a></li>
+                    <li><a href="a_show.aspx">Show Category</</a></li>
+                    <li><a href="a_addsubcategory.aspx">Sub Category</a></li>
+                    <li><a href="a_showsub.aspx">Show Sub Category</a></li>
+                    <li><a href="a_third.aspx">Third Category</a></li>
+                    <li><a href="a_showthird.aspx">Show Third Category</a></li>
+                    <li><a href="a_addproduct.aspx">Add Product</a></li>
+                    <li> <a href="a_addshow.aspx">Show Add Product </a> </li>
+                    <li> <a href="a_advertisment.aspx">Add Advertisment </a> </li>
+                    <li> <a href="a_showadvertisment.aspx">Show Advertisment </a> </li>
+                    <li> <a href="Show Order.aspx">Show Order </a> </li>
+                    <li> <a href="a_summaryreport.aspx">Summary Report </a> </li>
+
+
+
+
+                </ul>
+
+            </div>
+
+            <%--left Menu Finish--%>
+
+
+        </div>
+
+        <%--left panel finished--%>
+       
+        
+        <%--right panel started--%>
+
+        <div class="rightpanel">
+
+            <%--search bar started--%>
+
+            <div class="search-bar">
+
+                <div class="search-bar-left">
+
+                    <asp:TextBox ID="search" runat="server"></asp:TextBox>
+                        
+                    <a href="#" id="searchbtn">
+                        <i class="fa fa-search"></i>
+                    </a>
+
+                </div>
+
+                <div class="search-bar-right">
+
+                    <a href="#" id="notification">
+
+                        <i class="fa fa-bell"></i>
+
+                    </a>
+
+                    <a href="#" id="message">
+
+                        <i class="fa fa-envelope"></i>
+
+                    </a>
+
+                    <div class="arrow"></div>
+
+                    <div class="set">
+                        <h5>Welcome Admin</h5>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <%--Search Panel Finish--%>
+
+            <div class="right_text">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+
+
+            </div>
+
+        </div>
+
+        <%--right panel Finish--%>
+
+                
+
+    </div>
+   
+    </form>
+</body>
+</html>

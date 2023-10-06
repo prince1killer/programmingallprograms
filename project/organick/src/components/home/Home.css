@@ -41,17 +41,18 @@
 
 .home-second{
     width: 100%;
-    height: 50vh;
+    /* height: 50vh; */
     padding: 5% 3%;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .home-second_box{
-    width: 30%;
+    width: 350px;
     margin: 10px;
-    height: 90%;
+    height: 165px;
     border-radius: 20px;
     background-size: cover;
     position: relative;
@@ -205,7 +206,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.box{
+/* .box{
     transition: .5s;
     margin: 10px 10px;
     width: 250px;
@@ -216,17 +217,17 @@
     display: flex;
     flex-direction: column;
     position: relative;
-}
+} */
 
-.box:hover{
+/* .box:hover{
     transform: scale(1.1);
     z-index: 2;
     box-shadow: 5px 1px 20px black;
     justify-content: space-between;
-}
+} */
 
 
-.box1_box1{
+/* .box1_box1{
     background-image: url(../../../public/images/Imagecontectp1.png);
 }
 .box1_box2{
@@ -250,7 +251,7 @@
 } 
 .box2_box4{
     background-image: url(../../../public/images/Imagehomeproduct8.png);
-} 
+}  */
 
 
 /* ================ Testominal  ================================================================ */

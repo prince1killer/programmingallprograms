@@ -1,0 +1,254 @@
+.about_header{
+    width: 100%;
+    background-image: url(../../../public/images/ImageAbout.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    background-size: cover;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: var(--hand2);
+    color: #274C5B;
+}
+
+.about_about_us{
+    width: 100%;
+    background-image: url(../../../public/images/Imageabout_aboutus.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    padding: 2% 10%;
+    height: 100vh;
+    margin: 10% 0%;
+}
+
+.about_about_us > div{
+    width: 50%;
+    float: right;
+}
+
+.about_aboutus_title{
+    font-size: 35px;
+    font-family: var(--hand1);
+    color: green;
+    font-weight: 600;
+}
+
+.about_aboutus_dis{
+    font-weight: 700;
+    font-size: 45px;
+    color: var(--backgroundColor1);
+    margin: 3% 0%;
+}
+
+.about_about_us > div > p{
+    font-family: var(--hand2);
+    margin: 5% 0%;
+    color: gray;
+}
+
+.about_about_us > div >div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about_about_us > div > div >span{
+    font-size: 25px;
+    width: 50%;
+    margin: 10% 0%;
+    font-family: var(--hand2);
+    color: #274C5B;
+    font-weight: 650;
+}
+
+.about_about_us > div > button{
+    padding: 3% 2%;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--backgroundColor1);
+    color: white;
+    font-size: 25px;
+}
+
+.about_about_us > div > button:hover{
+    background-color: white;
+    color: black;
+}
+
+/* ============================================== */
+.about_choose{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(232, 232, 232);
+}
+.about_choose_content{
+    width: 100%;
+    display: flex;
+}
+
+.about_choose_content > div{
+    width: 50%;
+    padding: 1% 2%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about_choose_content > div > img{
+    width: 400px;       
+    height: 400px;
+    border-radius: 20px;
+}
+
+.about_choose_dis{
+    font-family: var(--hand2);
+    font-weight: 650;
+    color: var(--backgroundColor1);
+    font-size: 45px;
+    margin: 3% 10%;
+}
+
+.writen> p{
+    font-family: var(--hand2);
+    color: gray;
+    margin: 3% 10%;
+    width: 500px;
+}
+
+.writen >button{
+    width: 30%;
+    margin: 3% 10%;
+    padding:1%  1%;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-family: var(--hand2);
+    color: green;
+}
+
+.writen > button > span{
+    width: 15px;
+    display: inline-block;
+    height: 15px;
+    border-radius: 50%;
+    border: 3px solid var(--green-color);
+}
+
+.about_choose_title{
+    font-family: var(--hand1);
+    font-weight: 650;
+    color: var(--green-color);
+    font-size: 35px;
+    margin: 0% 10%;
+}
+
+.about_choose_reason{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.reason{
+    width: 180px;
+    height: 230px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding: 3% 1%;
+    align-items: center; 
+    margin: 10% 0%;
+}
+
+.reason > img{
+    padding: 5% 8%;
+    border-radius: 5px;
+    background-color: rgb(230, 230, 230);
+}
+
+.reason > p {
+    text-align: center;
+    font-family: var(--hand2);
+    font-size: 15px;
+}
+
+.reason > h2{
+    font-size: 20px;
+    margin: 5% 0%;
+}
+
+/* ============================ Persion ==================== */
+
+.about_team{
+    width: 100%;
+    text-align: center;
+    padding: 5% 15%;
+}
+.about_team_title{
+    font-weight: 650;
+    font-family: var(--hand1);
+    font-size: 35px;
+    color: var(--green-color);    
+}
+
+.about_team_head{
+    font-weight: 650;
+    font-family: var(--hand2);
+    font-size: 45px;
+    margin: 2% 0%;
+    color: var(--backgroundColor1);
+}
+
+.about_team_dis{
+    font-size: 13px;
+    font-family: var(--hand2);
+    padding: 0% 5%;
+}
+
+.about_team_content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ========================================================== */
+.about_aboutus{
+    width: 100%;
+    background-color: var(--backgroundColor1);
+    text-align: center;
+    padding: 5% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 0%;
+}
+
+.about_aboutus_contact_img{
+    display: flex;
+    width: 60%;
+}
+
+.about_aboutus_contact_img > div{
+    margin: 3%;
+    
+}
+
+.about_aboutus_contact_img > div > img{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.about_aboutus_contact_img > div > span{
+    font-family: var(--hand2);
+    color: white;
+}

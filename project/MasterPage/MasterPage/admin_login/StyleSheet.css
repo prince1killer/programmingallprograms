@@ -1,0 +1,50 @@
+﻿body {
+    background-color:silver;
+}
+*{
+    margin:0px;
+    padding:0px;
+}
+.admin_login{
+    margin:auto;
+    margin-top:50px;
+    text-align:center;
+    width:300px;
+    height:350px;
+    border:1px solid black;
+    box-shadow:0 0 10px black;
+    background-color:white;
+}
+.admin_img img{
+    margin-top:20px;
+    width:70px;
+    height:70px;
+}
+.same{
+    border-radius:5px;
+    margin-top:20px;
+    border:none;
+    width:230px;
+    height:25px;
+    background-color:silver;
+    text-align:center;
+    border:1px solid black;
+}
+.admin_btn{
+    border-radius:5px;
+    margin-top:50px;
+    border:none;
+    width:230px;
+    height:25px;
+    color:white;
+    background-color:purple;
+    text-align:center;
+}
+#forgot,#create{
+    display:inline-block;
+    padding:20px 8px;
+    color:gray;
+}
+#forgot:hover,#create:hover{
+    color:black;
+}

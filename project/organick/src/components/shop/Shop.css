@@ -1,0 +1,28 @@
+.shop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop_header{
+    width: 100%;
+    height: 300px;
+    background-image: url(../../../public/images/Imageshop.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-family: var(--hand2);
+    font-weight: 650;
+    color: var(--backgroundColor1);
+}
+
+.shop_content{
+    margin: 10% 0%;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

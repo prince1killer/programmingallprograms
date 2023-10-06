@@ -3,6 +3,9 @@ import "./App.css"
 import Home from "./components/home/Home";
 import Navebar from "./components/Navebar";
 import Footer from "./components/Footer";
+import { BrowserRouter , Route, Routes } from "react-router-dom";
+import About from "./components/about/About";
+import Shop from "./components/shop/Shop";
 function App() {
 
   const [mode, setMode] = useState("light")
@@ -23,11 +26,15 @@ function App() {
   }
 
   return (
-    <div className="app" >
+    <BrowserRouter>
     <Navebar  black="black" mode={mode} modechange={modechange}/>
-    <Home/>
+    <Routes>
+        <Route path="/" element={<Home  />}></Route>
+        <Route path="/about" element={<About/>}></Route>
+        <Route path="/shop" element={<Shop/>}></Route>
+    </Routes>
     <Footer/>
-    </div>
+    </BrowserRouter>
   );
 }
 

@@ -67,16 +67,16 @@ const Home = () => {
           <div className="home_product_content_head">Our Products</div>
           <div className="home_product_contect_boxs">
             <div className="box1">
-              <div className="box1_box1 box"><Label_innerContent button={"Vegetable"} title={"Calabrese Broccoli"} price={"$13.00"} /></div>
-              <div className="box1_box2 box"><Label_innerContent button={"Fresh"} title={"Fresh Banana Fruites"} price={"$14.00"} /></div>
-              <div className="box1_box3 box"><Label_innerContent button={"Millets"} title={"White Nuts"} price={"$15.00"} /></div>
-              <div className="box1_box4 box"><Label_innerContent button={"Vegetable"} title={"Vegan Red Tomato"} price={"$17.00"} /></div>
+              <div className="box1_box1 box"><Label_innerContent imgName={"Imagecontectp1.png"} button={"Vegetable"} title={"Calabrese Broccoli"} price={"$13.00"} /></div>
+              <div className="box1_box2 box"><Label_innerContent imgName={"Imagecontectp2.png"} button={"Fresh"} title={"Fresh Banana Fruites"} price={"$14.00"} /></div>
+              <div className="box1_box3 box"><Label_innerContent imgName={"Imagecontectp3.png"} button={"Millets"} title={"White Nuts"} price={"$15.00"} /></div>
+              <div className="box1_box4 box"><Label_innerContent imgName={"Imgcontectp4.png"} button={"Vegetable"} title={"Vegan Red Tomato"} price={"$17.00"} /></div>
             </div>
             <div className="box2">
-              <div className="box2_box1 box"><Label_innerContent button={"Health"} title={"Mung Bean"} price={"$11.00"} /></div>
-              <div className="box2_box2 box"><Label_innerContent button={"Nuts"} title={"Brown Hazelnut"} price={"$12.00"} /></div>
-              <div className="box2_box3 box"><Label_innerContent button={"Fresh"} title={"Egg"} price={"$17.00"} /></div>
-              <div className="box2_box4 box"><Label_innerContent button={"Fresh"} title={"Zelco Suji Elaichi Rusk"} price={"$15.00"} /></div>
+              <div className="box2_box1 box"><Label_innerContent imgName={"Imgcontectp5.png"} button={"Health"} title={"Mung Bean"} price={"$11.00"} /></div>
+              <div className="box2_box2 box"><Label_innerContent imgName={"Imagecontectp6.png"} button={"Nuts"} title={"Brown Hazelnut"} price={"$12.00"} /></div>
+              <div className="box2_box3 box"><Label_innerContent imgName={"Imagecontectp7.png"} button={"Fresh"} title={"Egg"} price={"$17.00"} /></div>
+              <div className="box2_box4 box"><Label_innerContent imgName={"Imagehomeproduct8.png"} button={"Fresh"} title={"Zelco Suji Elaichi Rusk"} price={"$15.00"} /></div>
             </div>
           </div>
         </div>
