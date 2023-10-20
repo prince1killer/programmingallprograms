@@ -21,8 +21,14 @@
 
 }
 
-
 /* ============================= news pages ============================== */
+.news_page{
+    /* height: 500vh;
+     */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 .news_page_header{
     width: 100%;
     height: 120vh;
@@ -30,5 +36,92 @@
     background-size: cover;
     border-radius: 0%;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
+.news_page_title{
+    position: absolute;
+    bottom: -15%;
+    width: 80%;
+    background-color: white;
+    height: 250px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 2% 5%;
+    box-shadow:  0 10px 10px black;
+}
+.news_page_title_top{
+    font-size: 20px;
+    font-family: var(--hand2);
+    color: rgb(59, 56, 114);
+}
+.news_page_title_top > span{
+    font-weight: 600;
+    color: var(--backgroundColor1);
+}
+
+.news_page_title_top > i{
+    color: rgb(43, 220, 40);
+    padding: 0px 13px;
+}
+
+.news_pages_title_middle{
+    font-size: 35px;
+    padding: 20px 0;
+    font-weight: 600;
+    color: var(--backgroundColor1);
+    font-family: var(--hand2);
+}
+
+.news_page_title > p {
+    font-size: 20px;
+    font-family: var(--hand2);
+    padding-right: 30%;
+}
+
+.news_page_content{
+    line-height: 22px;
+    width: 50%;
+    margin-top: 10%;
+    font-family: var(--hand2);
+    color: gray;
+}        
+
+.news_page_content > p{
+    padding: 5% 0%;
+}
+
+.news_page_content > h1{
+    color: var(--backgroundColor1);
+}
+
+.news_page_content > ul{
+    padding: 3% 0%;
+}
+
+.news_page_content_box{
+    height: 250px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    margin: 5% 0%;
+    padding: 0% 10%;
+}
+
+.news_page_content_box > p {
+    align-items: center;
+}
+
+
+.news_pages_title_bottom > h2{
+    color: var(--backgroundColor1);
+    font-size: 30px;
+    padding: 5% 0%;
+} 
+
+.news_pages_title_bottom > ol{
+    padding: 5% 2%;
+}

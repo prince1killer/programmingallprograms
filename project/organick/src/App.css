@@ -123,6 +123,7 @@
   display: none;
   position: relative;
   font-size: 20px;
+  z-index: 2;
 }
 .menubar ul{ 
   position: absolute;
