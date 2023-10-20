@@ -1,0 +1,10 @@
+.bubble_main{
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: -30px;
+  transition: .1s;
+}

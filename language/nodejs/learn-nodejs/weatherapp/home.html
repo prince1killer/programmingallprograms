@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        
+        .main{
+            width: 100%;
+            height: 100vh;
+            background-color: red;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 2%;
+        }
+
+        .menu{
+            width: 80%;
+            background-color: blue;
+            padding: 1% 5%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .menu > input{
+            width: 60%;
+            outline: none;
+            padding: 0% 3%;
+        }
+
+
+        .menu > input, .menu > button{
+            border: none;
+            border-radius: 10px;
+            height: 50px;
+        }
+
+        .menu > button{
+            width: 100px;
+        }
+        
+        .content{
+            width: 80%;
+            background-color: yellow;
+            padding: 1% 5%;
+            display: flex;
+            justify-content: space-around;
+        }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main">
+        <div class="menu">
+            <input type="serch" placeholder="Search City...." />
+            <button>Click</button>
+        </div>
+        <div class="content">
+            <div><span><label>City :</label>Puna</span><i class="fa-solid fa-user"></i></div>
+            <div><span><label>Countery :</label>In</span></div>
+            <div><span><label>Temprature :</label>23.23</span><i class="fa-solid fa-sun"></i></div>
+            <div><p><span><label>Minimum Temprature</label></span></p> <p></label>Maximum Temprature</span></p></div>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+</html>
+
+
+<!-- 361f243eed60886fa6382b289db17ceb
+http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
+http://api.openweathermap.org/geo/1.0/direct?q=puna&limit=40&appid=361f243eed60886fa6382b289db17ceb -->

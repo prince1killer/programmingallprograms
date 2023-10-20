@@ -441,11 +441,11 @@
     transition: .5s;
 }
 
-.offer_store:hover{
+/* .offer_store:hover{
     transform: scale(1.3);
     box-shadow:  0 0 20px black;
     z-index: 2;
-}
+} */
 
 .home_offer_contain > .offer1{
     position: relative;

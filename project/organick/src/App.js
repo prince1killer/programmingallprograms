@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import { BrowserRouter , Route, Routes } from "react-router-dom";
 import About from "./components/about/About";
 import Shop from "./components/shop/Shop";
+import News from "./components/news/News";
+import News_page from "./components/news/News_page";
 function App() {
 
   const [mode, setMode] = useState("light")
@@ -32,6 +34,9 @@ function App() {
         <Route path="/" element={<Home  />}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/shop" element={<Shop/>}></Route>
+        <Route path="/news" element={<News/>}></Route>
+        <Route path="/newsp" element={<News_page/>}></Route>
+
     </Routes>
     <Footer/>
     </BrowserRouter>

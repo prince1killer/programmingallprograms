@@ -1,0 +1,41 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+/* ==================================  PasswordGen  ================================================== */
+.main_pass{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    padding: 10% 20%;
+    box-shadow:  0 0 10px black;
+}
+/* ====================================== Boubble ==================================================== */
+.bubble_main{
+    width: 100%;
+    height: 100vh;
+}
+
+.circle{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
+    left: -30px;
+    top: -30px;
+}
+/* ============================================================================================= */
+.mouse_main{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To do List</title>
+</head>
+<style>
+    
+    #main
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #add_table
+    {   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:10px;
+        width:45%;
+        border:1px solid #4CAF50;
+        background-color: #4CAF50;
+    }
+
+    table 
+    {
+        width: 75%;
+        margin: 20px;
+    }
+      
+    th,td 
+    {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+  
+    th 
+    {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+<body>
+    <div id="main">
+        <h1>My To Do List</h1>
+        <div id="add_table">
+            <input type="text" id="txt1" style="height: 20px">
+            <button onclick="add()" style="margin-left:20px;height:30px;width:70px;color:white;background-color:cornflowerblue">ADD</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+</body>
+<script>
+    let a=document.getElementById("txt1")
+    function add(){
+        // if(txt1.value!="")
+        // {
+            let xyz=document.createElement("tr")
+            xyz.id="tr1"
+            document.getElementById("table-body").appendChild(xyz)
+            let abc=document.createElement("td")
+            abc.innerHTML = "wer"
+            document.getElementById("tr1").appendChild(abc)
+
+            // td1.innerHTML=document.getElementById("txt1").value;
+            // let v = document.getElementById("tr1")
+        // console.log(v)
+        // }
+        // else
+        // {
+        //     return 0;
+        // }
+        let v = document.getElementById("tr1")
+        console.log(v)
+        // let div1 = document.createElement("div")
+        // div1.id = "main11"
+        // div1.style.width= "100px"
+        // div1.style.height= "100px"
+        // div1.style.backgroundColor= "red"
+        // document.getElementById("table-body").appendChild(div1)
+        // console.log(document.getElementById("main11"))
+    }
+</script>
+</html>

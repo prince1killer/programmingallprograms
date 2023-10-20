@@ -1,11 +1,11 @@
 import React from "react";
 import "./Home.css"
-import Label_innerContent from "../Label_innerContent";
+import LabelInnerContent from "../LabelInnerContent";
 import Offer_home from "./Offer_home";
-import News_contain from "../News_contain";
+import News_contain from "../NewsContain";
 
 
-const Count_value = (props) => {
+const CountValue = (props) => {
   return (
     <div>
       <svg width="150" height="150" viewBox="25 40 204 175" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,16 +67,16 @@ const Home = () => {
           <div className="home_product_content_head">Our Products</div>
           <div className="home_product_contect_boxs">
             <div className="box1">
-              <div className="box1_box1 box"><Label_innerContent imgName={"Imagecontectp1.png"} button={"Vegetable"} title={"Calabrese Broccoli"} price={"$13.00"} /></div>
-              <div className="box1_box2 box"><Label_innerContent imgName={"Imagecontectp2.png"} button={"Fresh"} title={"Fresh Banana Fruites"} price={"$14.00"} /></div>
-              <div className="box1_box3 box"><Label_innerContent imgName={"Imagecontectp3.png"} button={"Millets"} title={"White Nuts"} price={"$15.00"} /></div>
-              <div className="box1_box4 box"><Label_innerContent imgName={"Imgcontectp4.png"} button={"Vegetable"} title={"Vegan Red Tomato"} price={"$17.00"} /></div>
+              <div className="box1_box1 box"><LabelInnerContent imgName={"Imagecontectp1.png"} button={"Vegetable"} title={"Calabrese Broccoli"} price={"$13.00"} /></div>
+              <div className="box1_box2 box"><LabelInnerContent imgName={"Imagecontectp2.png"} button={"Fresh"} title={"Fresh Banana Fruites"} price={"$14.00"} /></div>
+              <div className="box1_box3 box"><LabelInnerContent imgName={"Imagecontectp3.png"} button={"Millets"} title={"White Nuts"} price={"$15.00"} /></div>
+              <div className="box1_box4 box"><LabelInnerContent imgName={"Imgcontectp4.png"} button={"Vegetable"} title={"Vegan Red Tomato"} price={"$17.00"} /></div>
             </div>
             <div className="box2">
-              <div className="box2_box1 box"><Label_innerContent imgName={"Imgcontectp5.png"} button={"Health"} title={"Mung Bean"} price={"$11.00"} /></div>
-              <div className="box2_box2 box"><Label_innerContent imgName={"Imagecontectp6.png"} button={"Nuts"} title={"Brown Hazelnut"} price={"$12.00"} /></div>
-              <div className="box2_box3 box"><Label_innerContent imgName={"Imagecontectp7.png"} button={"Fresh"} title={"Egg"} price={"$17.00"} /></div>
-              <div className="box2_box4 box"><Label_innerContent imgName={"Imagehomeproduct8.png"} button={"Fresh"} title={"Zelco Suji Elaichi Rusk"} price={"$15.00"} /></div>
+              <div className="box2_box1 box"><LabelInnerContent imgName={"Imgcontectp5.png"} button={"Health"} title={"Mung Bean"} price={"$11.00"} /></div>
+              <div className="box2_box2 box"><LabelInnerContent imgName={"Imagecontectp6.png"} button={"Nuts"} title={"Brown Hazelnut"} price={"$12.00"} /></div>
+              <div className="box2_box3 box"><LabelInnerContent imgName={"Imagecontectp7.png"} button={"Fresh"} title={"Egg"} price={"$17.00"} /></div>
+              <div className="box2_box4 box"><LabelInnerContent imgName={"Imagehomeproduct8.png"} button={"Fresh"} title={"Zelco Suji Elaichi Rusk"} price={"$15.00"} /></div>
             </div>
           </div>
         </div>
@@ -99,10 +99,10 @@ const Home = () => {
           <div className="contain_name">Sara Taylor</div>
           <div>Consumer</div>
           <div className="contain_count">
-            <Count_value number={"100%"} name={"Organic"}/>
-            <Count_value number={"285"} name={"Active Product"}/>
-            <Count_value number={"350+"} name={"Organic Orchads"}/>
-            <Count_value number={"25+"} name={"Year of feaming"}/>
+            <CountValue number={"100%"} name={"Organic"}/>
+            <CountValue number={"285"} name={"Active Product"}/>
+            <CountValue number={"350+"} name={"Organic Orchads"}/>
+            <CountValue number={"25+"} name={"Year of feaming"}/>
           </div>
         </div>
       </div>
@@ -122,13 +122,14 @@ const Home = () => {
           <div className="home_news_title">News</div>
           <div className="home_news_description"><p> Discover weekly content about organic food, & more </p> <button>View More <i className="fa-solid fa-circle-arrow-right"></i></button> </div>
           <div className="home_news_contain">
-            <News_contain img={"Imagenews1.png"}/>
-            <News_contain img={"Imagenews2.png"}/>
+            <News_contain img={"Imagenews1.png"} title={"The Benefits of Vitamin D & How to Get It"} dis={"Simply dummy text of the printing and typesetting industry. Lorem Ipsum"}/>
+            <News_contain img={"Imagenews2.png"} title={"Our Favorite Summertime Tomato"} dis={"Simply dummy text of the printing and typesetting industry. Lorem Ipsum"}/>
           </div>
         </div>
       </div>
       {/* ========================================== footer =========================== */}
 
+      
 
     </div>
   )
