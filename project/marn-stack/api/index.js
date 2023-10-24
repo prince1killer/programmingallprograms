@@ -21,6 +21,15 @@ app.get("/text",(req,res)=>{
 
 app.use('/api/user',useRouter)
 app.use('/api/auth',authRouter)
+app.use((err, req, res, next)=> {
+    const statuseCode = err.statuseCode || 500;
+    const message = err.message || 'Internal server error';
+    return res.status(statuseCode).json(()=>{
+        success : false,
+        statuseCode,
+        message
+    })
+})
 
 
 

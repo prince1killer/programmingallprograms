@@ -19,7 +19,7 @@ const CountValue = (props) => {
   )
 }
 
-const Home = () => {
+const Home = (props) => {
 
   return (
     <div className="home" id="home">
@@ -52,9 +52,9 @@ const Home = () => {
       <div className="home_aboutus">
         <div className="home_aboutus_content">
           <div className="home_aboutus_content_work">
-            <div className="home_aboutus_title">About us</div>
-            <div className="home_aboutus_head">We Believe in Working<br /> Accredited Farmers</div>
-            <p>Simply dummy text of the printing and typesetting industry. Lorem had ceased to been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+            <div className="home_aboutus_title" style={{color:props.mode == "dark" ? 'rgb(48, 210, 255)' : 'green'}}>About us</div>
+            <div className="home_aboutus_head"  style={{color:props.mode == "dark" ? 'rgb(245, 81, 11)' : 'var(--backgroundColor1)'}}>We Believe in Working<br /> Accredited Farmers</div>
+            <p style={{color:props.mode == "dark" ? 'rgb(254, 255, 214)' : 'black'}}>Simply dummy text of the printing and typesetting industry. Lorem had ceased to been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
             <div className="home_aboutus_icon"></div>
             <button>Shop now<i className="fa-solid fa-circle-arrow-right"></i></button>
           </div>
@@ -63,8 +63,8 @@ const Home = () => {
       {/* ================================ product ================================= */}
       <div className="home_product">
         <div className="home_product_content">
-          <div className="home_product_content_title">Categories</div>
-          <div className="home_product_content_head">Our Products</div>
+          <div className="home_product_content_title" >Categories</div>
+          <div className="home_product_content_head" style={{color:props.mode == "dark" ? 'rgb(245, 81, 11)' : 'var(--backgroundColor1)'}} >Our Products</div>
           <div className="home_product_contect_boxs">
             <div className="box1">
               <div className="box1_box1 box"><LabelInnerContent imgName={"Imagecontectp1.png"} button={"Vegetable"} title={"Calabrese Broccoli"} price={"$13.00"} /></div>
@@ -86,7 +86,7 @@ const Home = () => {
       <div className="home_testimonial">
         <div className="home_testimonial_contain">
           <div className="contain_title">Testimonial</div>
-          <div className="contain_head">What Our Customer Saying?</div>
+          <div className="contain_head" style={{color:props.mode == "dark" ? 'rgb(245, 81, 11)' : 'var(--backgroundColor1)'}}>What Our Customer Saying?</div>
           <img src="images/Imageperson.png" alt="person img" />
           <div className="stars">
             <img src="images/Star 7Star.png" alt="images" />
@@ -107,7 +107,7 @@ const Home = () => {
         </div>
       </div>
       {/* =============================== offer  ================================= */}
-      <Offer_home/>
+      <Offer_home mode={props.mode}/>
       {/* ================================ upcomming ================================ */}
       <div className="home_upcoming">
         <div className="home_upcoming_cover">
@@ -120,7 +120,7 @@ const Home = () => {
       <div className="home_news">
         <div className="home_news_container">
           <div className="home_news_title">News</div>
-          <div className="home_news_description"><p> Discover weekly content about organic food, & more </p> <button>View More <i className="fa-solid fa-circle-arrow-right"></i></button> </div>
+          <div className="home_news_description"><p style={{color:props.mode == "dark" ? 'rgb(245, 81, 11)' : 'var(--backgroundColor1)'}}> Discover weekly content about organic food, & more </p> <button>View More <i className="fa-solid fa-circle-arrow-right"></i></button> </div>
           <div className="home_news_contain">
             <News_contain img={"Imagenews1.png"} title={"The Benefits of Vitamin D & How to Get It"} dis={"Simply dummy text of the printing and typesetting industry. Lorem Ipsum"}/>
             <News_contain img={"Imagenews2.png"} title={"Our Favorite Summertime Tomato"} dis={"Simply dummy text of the printing and typesetting industry. Lorem Ipsum"}/>

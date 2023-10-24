@@ -32,7 +32,7 @@ function News_page() {
               <li>Publishing packages and web pageLorem Ipsum as their default</li>
               <li>Content here, content here', making it look like readable</li>
               <li>Packages and web pageLorem Ipsum as their default</li>
-              <lteri>more-or-less normal distribution of letters</li>
+              <li>more-or-less normal distribution of letters</li>
             </ol>
           </div>
         </div>

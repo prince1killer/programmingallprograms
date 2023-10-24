@@ -1,0 +1,72 @@
+.project_head {
+    margin: 2% 0%;
+    display: flex;
+    justify-content: center;
+}
+
+.project_head > h1{
+    font-size: 40px;
+    font-family: var(--hand2);
+}
+
+.project_content{
+    padding: 2% 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.project_content > div{
+    margin: 3% 3%;
+}
+
+
+
+.project_content_box{
+    width: 300px;
+    border-radius: 20px;
+    height: 300px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project_content_box_cover{
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .8;
+    display: none;
+    transition: 1s;
+}
+
+.project_content_box_cover > i{
+    font-size: 30px;
+}
+
+.project_content_box:hover .project_content_box_cover{
+    display: flex;
+}
+
+.protofolio_title, .protofolio_name{
+    font-weight: 550;
+
+}
+
+.protofolio_title{
+    font-size: 20px;
+    font-family: var(--hand2);
+    margin: 3% 0%;
+}
+
+.protofolio_name{
+    font-size: 20px;
+    color: rgb(29, 193, 14);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

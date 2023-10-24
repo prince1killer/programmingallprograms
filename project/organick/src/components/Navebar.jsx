@@ -29,7 +29,6 @@ function Navebar(props) {
       <ul style={{ display: props.color, transition: "10s" }}>
         <li><Link to="/" style={{ color: see() }}>Home</Link></li>
         <li><Link to="/about" style={{ color: see() }}>About</Link></li>
-        <li><Link to="/pages" style={{ color: see() }}>Pages</Link></li>
         <li><Link to="/shop" style={{ color: see() }}>Shop</Link></li>
         <li><Link to="/project" style={{ color: see() }}>Project</Link></li>
         <li><Link to="/news" style={{ color: see() }}>News</Link></li>

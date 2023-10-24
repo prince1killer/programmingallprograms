@@ -120,14 +120,14 @@
 
 .home_aboutus_title{
     font-size: 35px;
-    color: green;
+    color: rgb(254, 255, 214);
     font-weight: 600;
     font-family: var(--hand1);
 }
 
 .home_aboutus_head{
     font-size: 45px;
-    color: var(--backgroundColor1);
+    /* color: var(--backgroundColor1); */
     font-family: var(--hand2);
     font-weight: 700;
 }
