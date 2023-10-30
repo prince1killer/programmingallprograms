@@ -15,6 +15,8 @@ export default function Signup() {
       },
       body: json.stringify(formData)
     })
+    const data = await res.json();
+    console.log(data)
     console.log(formData)
   }
 

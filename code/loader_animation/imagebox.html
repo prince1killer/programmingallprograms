@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            background-color: black;
+        }
+        
+        .container{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .box{
+            height: 5vw;
+            width: 5vw;
+            background-color: red;
+            transform-style: preserve-3d;
+            border: 1px solid black;
+            background-attachment: fixed;
+            background-image: url(images/cutegod.jpg); 
+            background-size: cover;
+            background-repeat: no-repeat; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+<script src="anime.min2.js"></script>
+<script>
+    const container = document.querySelector(".container");
+    for(let i=0;i<=400;i++){
+        const boxes = document.createElement("div");
+        boxes.classList.add("box");
+        container.appendChild(boxes)
+    }
+
+    let box = document.querySelectorAll(".box")
+    let animation = anime.timeline({
+        targets : box,
+        easing : 'easeInOutExpo',
+        loop : true,
+    })
+    animation.add({
+        scale:0
+    })
+
+</script>
+</html>

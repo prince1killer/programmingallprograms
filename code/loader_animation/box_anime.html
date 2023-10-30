@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: red;
+        }
+
+        .container{
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container > h1{
+            z-index: 2;
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .boxes{
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            /* background-color: #13b0f3; */
+            box-shadow: 0 0 10px black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1><span>This is my first anime</span><br>loader</h1>
+    </div>
+
+</body>
+<script src="anime.min2.js"></script>
+<script>
+
+    const container = document.querySelector(".container");
+    
+    for(let i=0;i<=100;i++){
+        const box = document.createElement("box");
+        box.classList.add("boxes");
+        box.transform = animateBlocks();
+        container.appendChild(box)
+    }
+
+    setInterval(animateBlocks,3000)
+    function animateBlocks(){
+        anime({
+            targets: '.boxes',
+            translateX: function(){
+                return anime.random(-650,650)
+            },
+            translateY: function(){
+                return anime.random(-500,500)
+            },
+            scale: function(){
+                return anime.random(.5,1)
+            }
+        })
+    }
+    function animateColor(){
+        anime({
+            targets: '.boxes',
+            backgroundColor: rgb(function(){
+                return anime.random(0,255)
+            })
+        })
+    }
+
+</script>    
+
+</html>
