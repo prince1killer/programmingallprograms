@@ -1,0 +1,329 @@
+:root{
+    --backgroundDark: #01374F;
+    --backgroundOrange: rgb(253, 171, 10);
+    --title: Arial, Helvetica, sans-serif;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.body{
+    background-color: var(--backgroundDark);
+} 
+
+.navbar > .container-fluid > .navbar-brand{
+    background-image: url(images/Logo.png);
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+}
+
+/* ========================= Home ================================================= */
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.home_coverbg{
+    position: absolute;
+    top: -10%;
+    left: 0%;
+    background-image: url(images/img3bg.png);
+    height: 1000px;
+    width: 70%;
+    background-size: cover;
+    transform: rotateZ(-40deg);
+    /* filter: blur(15px); */
+}
+
+.social{
+    position: absolute;
+    top: 25%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.social > a {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border:3px solid var(--backgroundOrange);
+    margin: 3px 0px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 3px 3px 5px white;
+}
+
+.social > a:hover{
+    color: var(--backgroundDark);
+    border: 3px solid var(--backgroundDark);
+    background-color: white;
+    box-shadow: 3px 3px 5px black;
+}
+
+.about{
+    width: 100%;
+    margin: 10% 0%;
+}
+
+.about_content{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+
+.about > h1{
+    padding: 20px 0px;
+    font-weight: 650;
+    color: var(--backgroundOrange);
+    font-size:80px; 
+    font-family: var(--title);
+    text-align: center;
+}
+
+.about_dis, .logoanimation{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_dis{
+    flex-direction: column;
+    font-family: var(--title);
+}
+
+.about_dis > h2{
+    font-size: 35px;
+    font-weight: 700;
+    color: #FDAB0A;    
+}
+
+.about_dis > p {
+    padding: 10px 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.logoanimation{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoanimation > img{
+    border-radius: 20px;
+    top: 30%;
+    z-index: 2;
+    position: absolute;
+    width: 450px;
+    height: 300px;
+    box-shadow: 0 0 10px #fff;
+    animation: card 1.5s linear infinite;
+    transform: perspective(3D);
+}
+
+@keyframes card {
+    0%{
+        transform: perspective(800px) translateY(10px)  rotateY(-15deg);
+    }
+    50%{
+        transform: perspective(800px)  translateY(0px)  rotateY(10deg);
+
+    }
+    100%{
+        transform: perspective(800px)  translateY(10px)  rotateY(-15deg);
+    }
+}
+
+/* .layer{
+    position: absolute;
+} */
+
+
+.layer > .l1{
+    width: 150px;
+    height: 150px;    
+    top: 10%;
+    left: 10%;    
+}
+.layer > .l2{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 60%;
+    right: 7%;
+}
+.layer > .l1, .layer > .l2{
+    position: absolute;
+    /* left: 30%; */
+    border-top: 10px solid var(--backgroundOrange);
+    border-bottom: 10px solid var(--backgroundOrange);
+    border-left: 10px solid rgb(0, 36, 182);
+    border-right: 10px solid rgb(0, 36, 182);
+    border-radius: 50%;
+    box-shadow: /* ie */
+                 0px -10px 15px -6px  rgba(253, 171, 10,0.7), /* top - THE RED SHADOW */
+                 0px  5px  15px  0px  rgba(253, 171, 10,0.3), /* bottom */
+                 5px  0px  15px  0px  rgba(0, 36, 182,0.3), /* right */
+                -5px  0px  15px  0px  rgba(0, 36, 182,0.3);
+    animation: boxs 2s linear infinite;
+}
+@keyframes boxs {
+    0%{
+        transform: rotateZ(0deg) scale(0.9);
+    }
+    25%{
+        transform: rotateZ(90deg)  scale(1);
+    }
+    50%{
+        transform: rotateZ(180deg) scale(1.1);
+    }
+    75%{
+        transform:  rotateZ(270deg) scale(1);
+
+    }
+    100%{
+        transform: rotateZ(0deg) scale(0.9);
+    }
+}
+    
+
+/* ========================= services ============================== */
+.services{
+    /* overflow: hidden; */
+    margin: 10% 0%;
+    position: relative;
+}
+
+.services > h1{
+    text-align: center;
+    font-size: 80px;
+    font-weight: 700;
+    font-family: var(--title);
+    color: var(--backgroundOrange);
+    position: relative;
+}
+
+.glob{
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px black;
+}
+
+.glob1{
+    /* left: -100px;
+    top: -100px; */
+    width: 25%;
+    height: 45%;
+    background: linear-gradient(90deg, rgba(110,223,14,1) 12%, rgba(0,212,255,1) 95%);
+}
+
+.glob2{
+    bottom: 0px;
+    right: 0px;
+    width: 30%;
+    height: 55%;
+    background: linear-gradient(90deg, rgba(223,73,14,1) 12%, rgba(175,0,255,1) 98%);
+}
+
+.services_dis{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.services_dis > a{
+    width: 350px;
+    height: 150px;
+    border: 5px solid var(--backgroundOrange);
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin: 3%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--title);
+    font-size: 30px;
+}
+/* ==================================== contect  =================================== */
+.contectus{
+    margin: 10%;
+}
+
+.contectus > h1{
+    text-align: center;
+    font-size: 70px;
+    font-family: var(--title);
+    color: var(--backgroundOrange);
+}
+
+.contect_dis{
+    padding: 0% 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contect_dis > input, .contect_dis > textarea{
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    margin: 3%;
+    padding: 1% 3%;
+    font-size: 25px;
+}
+
+.contect_dis > button{
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.contect_dis > button:hover{
+    background-color: var(--backgroundOrange);
+    color: var(--backgroundDark);
+}
+
+/* =========================== Responsive =================================== */
+@media (max-width: 1218px) {
+    .about_dis, .logoanimation{
+        width: 100%;
+        /* margin: 5% 0% 10% 0%; */
+    }
+    .logoanimation{
+        height: 20vh;
+        margin-bottom: 250px;
+    }
+    .layer{
+        display: none;
+    }
+}
+@media (max-width:765px) {
+    .glob1{
+        width: 25%;
+        height: 15%;
+    }
+    .glob2{
+        width: 25%;
+        height: 15%;
+    }
+}

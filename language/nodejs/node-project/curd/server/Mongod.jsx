@@ -12,11 +12,13 @@ const newSchema = mongoose.Schema({
     },
     user: {
         type : String,
-        require : true
-    },
+        require : true,
+        unique :true
+        },
     email :{
         type : String,
-        require : true
+        require : true,
+        unique : true
     },
     pass:{
         type : String,

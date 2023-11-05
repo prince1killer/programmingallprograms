@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cube from js</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            position: relative;
+            height: 100vh;
+        }
+
+        .box{
+            position: relative;
+            animation: cubero 3s linear infinite;
+        }
+
+        #box1,#box2,#box3,#box4,#box5,#box6{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 30px 0px;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes cubero{
+            100%{
+                transform: rotate3d(1,1,1, 360deg);
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box cubeRotate" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box" id="box6"></div>
+    </div>
+</body>
+<script>
+    function cube(len,col="red",idname){
+        for(i=0;i<=5;i++){
+            let boxes = document.createElement("div")
+            boxes.classList.add("boxes");
+            // boxes.id="b11";
+            boxes.className = `box${i}`;
+            boxes.style.width = len+"px";
+            boxes.style.height = len+"px";
+            boxes.style.position = "absolute";
+            boxes.style.backgroundColor = col;
+            boxes.style.transformStyle = 'preserve-3d';
+            document.getElementById(idname).appendChild(boxes)
+
+        }
+        document.querySelector(".box1").style.transform = `translateY(${len/2}px) translateZ(${len/2}px) rotateX(90deg)`
+        document.querySelector(".box2").style.transform = `translateY(${-(len/2)}px) translateZ(${len/2}px) rotateX(90deg)`
+        document.querySelector(".box3").style.transform = ` translateZ(${len}px)`
+        document.querySelector(".box4").style.transform = `translateX(${len/2}px) translateZ(${len/2}px) rotateY(90deg)`
+        document.querySelector(".box5").style.transform = `translateX(${-(len/2)}px) translateZ(${len/2}px) rotateY(90deg)`
+    }
+    
+
+    // doc/ument.getElementById("box1").appendChild(cube(100))
+    // let box11 = cube(100,"green")
+    // box1.innerHTML = box11
+    cube(100,"yellow","box1")
+    cube(100,"blue","box2")
+    cube(100,"green","box3")
+    cube(100,"black","box4")
+    cube(100,"pink","box5")
+    cube(100,"aqua","box6")
+
+
+</script>
+</html>
