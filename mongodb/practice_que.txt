@@ -1,0 +1,46 @@
+1. make a database?
+-> use Practice
+
+2. make collection of user, school, student, and Data?
+-> db.user()
+-> db.school()
+-> db.student()
+-> db.Data()
+
+3. insert data in all collection using given FILE;
+
+4. find only male student in school collection?
+-> db.school.find({gender:"Male"})
+
+5. find all the male and from 10 class in school collection?
+-> db.school.find({gender:"Male", class: 10})
+
+6. find all details of person name Sarge from school collection?
+-> db.school.find({first_name: "Sarge"})
+
+7. print only first_name out of whole details of person name Sarge?
+-> db.school.find({first_name: "Sarge"}, {first_name:true})
+
+8. print only first_name without printing id of person Sarge?
+-> db.school.find({first_name: "Sarge"}, {_id:0, first_name:true})
+
+9. update the first_name of Sarge into your name?
+-> db.school.update({first_name: "Sarge"}, {$set:{first_name:"pranav"}})
+                            or
+    db.school.updateOne({first_name: "Sarge"}, {$set:{first_name:"pranav"}})
+ 
+10. update the last_name into your and class in 12?
+->  db.school.updateOne({last_name: "McQuilty"}, {$set:{last_name:"kumar", class:12}})
+                                    or
+    db.school.update({last_name: "McQuilty"}, {$set:{last_name:"kumar", class:12}})
+
+11. find all the coustomer all data who have more the 45 age from data collection?
+-> db.data.find({age:{$gt:45}})
+
+12. find all the coustomer who age is equals to have age 45,42 ,28 and 62?
+-> db.data.find({age:{$in:[45,55,62,42]}})
+
+13. find all the coustomer who's age is not equals to have age 45,42 ,28 and 62?
+-> db.data.find({age:{$nin:[45,55,62,42]}})
+
+14. 
