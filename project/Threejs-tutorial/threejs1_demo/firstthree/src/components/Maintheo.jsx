@@ -1,26 +1,28 @@
 import *  as THREE from 'three';
 import React, { useEffect } from 'react'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import *  as dat from 'dat.gui';
 import space from '../images/space.jpg';
 import earth from '../images/earth.jpg';
 
 function Maintheo() {
-    useEffect(()=>{
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, window.innerWidth/ window.innerHeight, 0.1, 1000);
-
-        const orbit = new OrbitControls(camera, renderer.domElement);
-
-        renderer.shadowMap.enabled = true;
-
-        const axesHelper = new THREE.AxesHelper();
-        scene.add(axesHelper);
-        // camera.position.z = 5;
-        // camera.position.y = 1;
+  useEffect(()=>{
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth/ window.innerHeight, 0.1, 1000);
+    const bottel = new URL('../models/bottel7.glb',import .meta.url);
+    
+    const orbit = new OrbitControls(camera, renderer.domElement);
+    
+    renderer.shadowMap.enabled = true;
+    
+    const axesHelper = new THREE.AxesHelper();
+    scene.add(axesHelper);
+    // camera.position.z = 5;
+    // camera.position.y = 1;
         camera.position.set(0,2,4);
         orbit.update(); 
 
@@ -128,7 +130,15 @@ function Maintheo() {
         gui.add(option, 'intensity' , 0,10000)
 
 
- 
+        // ============= CREATING ObjectLoad =====================
+        const bottelLoad = new GLTFLoader();
+        bottelLoad.load(bottel.href,(gltf)=>{
+          const modal = gltf.scene;
+          scene.add(modal);
+          modal.position.set(-12,4,10);
+        },undefined, function(error){
+          console.log(error)
+        })
 
         function animate(){
           box.rotation.x +=0.01;
