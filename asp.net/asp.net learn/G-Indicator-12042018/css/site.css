@@ -1,0 +1,181 @@
+﻿
+body {
+    background: url(../images/myimg/test2.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+    min-height:1000px;
+}
+
+
+.myform {
+    padding: 30px 20px;
+    background-color: rgba(128, 128, 128, 0.29);
+    border-radius: 5px;
+}
+.modal-content {
+    /*background-color: rgba(0, 0, 0, 0.58);*/
+    background-color: transparent;
+    color: white;
+}
+
+.contact .section-title h3 {
+    color: white !important;
+}
+
+.section-modal .close-modal .lr, .section-modal .close-modal .lr .rl {
+    background-color: white;
+}
+
+.login .btn {
+    margin: 0px 5px;
+}
+
+.forgot {
+    padding: 20px 10px;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: all 0.3s;
+}
+
+    .forgot:hover {
+        color: white;
+        border: 1px solid;
+    }
+.section-modal .close-modal a {
+    z-index: 1051;
+    background-color: #222;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    padding: 10px 20px;
+
+}
+.box {
+    background-color: rgba(0, 0, 0, 0.56);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.45);
+}
+
+.detail {
+    padding: 10px;
+}
+
+.contactData {
+    color: white;
+}
+
+.contactData i {
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #ff432e;
+    height: 50px;
+    width: 50px;
+    line-height: 29px;
+    margin-bottom: 20px;
+}
+.close-modal span {
+    width: 30px;
+    height: 2px;
+    display: block;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+.menu {
+    position: absolute;
+    top: 10%;
+    right: 0px;
+    z-index: 111;
+}
+
+.menu ul li a {
+    padding: 20px;
+    display: block;
+    font-size: 25px;
+    color: white;
+    background-color: #050405;
+    cursor: pointer;
+}
+
+.menu ul li a:hover,.tooltip-inner {
+    background-color: #FF432E;
+    color:white;
+}
+.tooltip {
+    margin: 10px 20px;
+}
+.tooltip.left {
+    padding: 0 5px;
+}
+
+.tooltip.left .tooltip-arrow{
+    border-width: 5px 0 5px 5px;
+   border-left-color:#FF432E}
+.tooltip.right .tooltip-arrow{
+    border-width: 5px 5px 5px 0px;
+   border-right-color:#FF432E}
+.tooltip-inner {
+    padding: 3px 8px;
+   
+}
+
+.myform h3 {
+   margin-bottom: 20px;
+    color: white;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+}
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0px;
+    background-color: #ff432e;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+}
+.file-upload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.profileLabel b {
+    width: 100px;
+    display: inline-block;
+}
+.box .btn-primary {
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+.text-right.box {
+    background-color: transparent;
+}
+.form-group label {
+    color: white;
+    margin-right: 5px;
+    display: block;
+}
+
+.radio label, .checkbox label {
+    margin-left: 15px;
+}
