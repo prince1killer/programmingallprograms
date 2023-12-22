@@ -1,0 +1,17 @@
+#lbl1{
+	-fx-background-color: red;
+	-fx-text-fill: yellow;
+	-fx-alignment: center;
+}
+
+#root{
+	-fx-background-color: blue;
+}
+
+#btn1{
+	-fx-background-color: green;
+	-fx-arc-height: 100;
+	-fx-arc-width: 100;
+	-fx-border-radius: 30;
+	-fx-text-fill: white;
+}

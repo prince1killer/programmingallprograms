@@ -1,0 +1,41 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+/* ================================== Singin =========================================== */
+.signin{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.signinbox > input{
+    display: block;
+    width: 400px;
+    padding: 10px 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    border: 1px solid black;
+}
+
+.signinbox > label{
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.signinbox > button{
+    padding: 2% 7%;
+    border-radius: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: blue;
+    border-radius: none;
+}
+
+/* ================================== Singin end =========================================== */
+/* ================================== login =========================================== */

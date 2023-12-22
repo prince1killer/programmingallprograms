@@ -22,6 +22,7 @@ class p15newfor{
                         System.out.print(k);
                     }
                     else{
+                        
                         System.out.print(" ");
                     }
                 }

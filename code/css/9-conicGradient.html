@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: anim 2s linear infinite;
+            /* background-image: conic-gradient(from 260deg,rgb(255, 255, 255), rgb(248, 227, 0)); */
+
+            /* border: 20px solid; */
+        }
+        @keyframes anim{
+            from{
+                /* border-color: rgb(0, 0, 0); */
+                background-image: conic-gradient(from 0deg,rgb(255, 255, 255), rgb(248, 227, 0));
+            }
+            to{
+                /* border-color: rgb(255, 255, 255); */
+                background-image: conic-gradient(from 360deg,rgb(255, 255, 255), rgb(248, 227, 0));
+            }
+        }
+
+
+        .box::before{
+            content: "";
+            width: 270px;
+            height: 270px;
+            background-color: red;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

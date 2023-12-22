@@ -1,4 +1,4 @@
-//here we have to ise constructor and 
+//here we have to use constructor and 
 class Student{
     int rollno;
     String name;

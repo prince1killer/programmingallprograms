@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main" onmouseup="stopmove()" onresize="windowResize()">
+        <div id="starContainer" onmousedown="startmove()" onmouseup="stopmove()">
+            <div id="stars" onmousedown="startmove()" onmouseup="stopmove()"></div>
+        </div>
+
+        <div id="sun" onmousedown="startmove()" onmouseup="stopmove()"></div>
+
+        <div id="sunDay" onmousedown="startMove();" onmouseup="stopMove();"></div>
+      
+        <div id="sunSet" onmousedown="startMove();" onmouseup="stopMove();"></div>
+      
+        <div id="sky" onmousedown="startMove();" onmouseup="stopMove();"></div>
+
+
+
+        <div id="star" style="left: 250px; top: 30px;"></div>
+        <div id="star" style="left: 300px; top: 25px;"></div>
+        <div id="star" style="right: 40px; top: 40px;"></div>
+        <div id="star" style="right: 80px; top: 45px;"></div>
+        <div id="star" style="right: 120px; top: 20px;"></div>
+
+        <div id="horizon" onmousedown="startmove()" onmouseup="stopmove()"></div>
+        <div id="horizonNight" onmousedown="startmove()" onmouseup="stopmove()"></div>
+        <div id="moon" onmousedown="startmove()" onmouseup="stopmove()"></div>
+        <div id="mountainRange" onmousedown="startmove()" onmouseup="stopmove()">
+            <div id="mountain" onmousedown="startmove()" onmouseup="stopmove()"></div>
+        </div>
+
+        <div id="division" onmousedown="startDraggingDivision()" onmouseup="stopmove()"></div>
+        <div id="water" onmousedown="startmove()" onmouseup="stopmove()"></div>
+        <div id="waterReflectionContainer" onmousedown="startmove()" onmouseup="stopmove()">
+            <div id="waterReflectionMiddle" onmousedown="startmove()" onmouseup="stopmove()"></div>
+        </div>
+        
+
+        <div id="darknessOverlaySky" onmousedown="startmove()" onmouseup="stopmove()"></div>
+        <div id="darknessOverlay" onmousedown="startmove()" onmouseup="stopmove()"></div>
+        <div id="oceanRippleContainer"></div>
+        <div id="oceanRipple"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

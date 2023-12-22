@@ -1,5 +1,4 @@
 import './App.css'
-// import Solar from './Solar'
 import First from './pages/First'
 
 function App() {
