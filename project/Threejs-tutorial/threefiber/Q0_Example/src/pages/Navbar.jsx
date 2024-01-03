@@ -15,7 +15,7 @@ function Navbar() {
                             <Link className="nav-link active" aria-current="page" to="/">cloud</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/tshirt">T-shirt</Link>
+                            <Link className="nav-link active" aria-current="page" to="/pmove">ObjectMobe</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/">Home</Link>

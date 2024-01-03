@@ -16,6 +16,7 @@ export {asyncHandler}
 
 
 
+
 //THIS IS CODE TYPE FROM TRY CATCH
 // const asyncHandler = (fn) =>  {}
 // const asyncHandler = (fn) => {()=>{}}
